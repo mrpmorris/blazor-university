@@ -1,0 +1,64 @@
+﻿@page "/"
+
+
+<ViewVacancy Vacancy="@Vacancy" />
+
+@code
+{
+	Vacancy Vacancy;
+
+	protected override void OnInit()
+	{
+		base.OnInit();
+
+		var candidate1 = new Candidate
+		{
+			Name = "Bob Monkhouse",
+			Address = new Address
+			{
+				Lines = "123 Long Street\r\nSome town",
+				Area = "Birmingham",
+				PostalCode = "B11 2PY",
+				Country = "United Kingdom"
+			}
+		};
+		var candidate2 = new Candidate
+		{
+			Name = "Peter Morris",
+			Address = new Address
+			{
+				Lines = "321 Short Street\r\nSome other town",
+				Area = "Birmingham",
+				PostalCode = "B27 3HB",
+				Country = "United Kingdom"
+			}
+		};
+		Vacancy = new Vacancy
+		{
+			Title = "Trainee programmer",
+			ClosingDate = DateTime.Today.AddDays(100),
+			Address = new Address
+			{
+				Lines = "Office 3A, Concorde House\r\nBirmingham International Airport",
+				Area = "Birmingham",
+				PostalCode = "B26 3QJ",
+				Country = "United Kingdom"
+			},
+			Applications = new List<Application>
+{
+				new Application
+				{
+					Candidate = candidate1,
+					Date = DateTime.Today.AddDays(-5),
+					Text = "Please give me this job"
+				},
+				new Application
+				{
+					Candidate = candidate2,
+					Date = DateTime.Today.AddDays(-3),
+					Text = "Gis a job, I can do that!"
+				}
+			}
+		};
+	}
+}
