@@ -1,0 +1,6 @@
+﻿<div>SomeValue inside the ViewSomeValue component = @SomeValue</div>
+
+@code
+{
+	[CascadingParameter(Name = "ValueToOverride")] string SomeValue { get; set; }
+}

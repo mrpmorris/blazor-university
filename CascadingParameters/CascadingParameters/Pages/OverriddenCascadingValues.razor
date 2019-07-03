@@ -1,0 +1,11 @@
+@page "/overridden"
+
+<CascadingValue Name="ValueToOverride" Value="Outer value">
+  <ViewSomeValue/>
+
+  <CascadingValue Name="ValueToOverride" Value="Inner value">
+    <ViewSomeValue/>
+  </CascadingValue>  
+
+  <ViewSomeValue/>
+</CascadingValue>
