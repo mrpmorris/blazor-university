@@ -1,6 +1,7 @@
-﻿<div>@SomeValue</div>
+﻿<div>Values are @SomeValue1 / @SomeValue2</div>
 
 @code
 {
-	[CascadingParameter(Name = "ValueToOverride")] string SomeValue { get; set; }
+	[CascadingParameter(Name = "CascadedValue")] string SomeValue1 { get; set; }
+	[CascadingParameter(Name = "ValueToOverride")] string SomeValue2 { get; set; }
 }
