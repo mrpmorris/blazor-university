@@ -1,11 +1,12 @@
 @page "/overridden"
 
-<CascadingValue Name="ValueToOverride" Value="Outer value">
-  <ViewSomeValue/>
-
-  <CascadingValue Name="ValueToOverride" Value="Inner value">
-    <ViewSomeValue/>
-  </CascadingValue>  
-
-  <ViewSomeValue/>
+<CascadingValue Name="ValueToOverride" Value='"Outer value"'>
+	<h2>First level</h2>
+	<ViewSomeValue />
+	<CascadingValue Name="ValueToOverride" Value='"Inner value"'>
+		<h2>Second level</h2>
+		<ViewSomeValue />
+	</CascadingValue>
+	<h2>Back to first level</h2>
+	<ViewSomeValue />
 </CascadingValue>
