@@ -1,0 +1,61 @@
+﻿@page "/"
+@inherits IndexBase
+
+<h1>Look in the browser console output!</h1>
+
+The time now is @Time.ToString("hh:mm:ss")
+
+@code {
+	DateTime Time = DateTime.Now;
+
+	void UpdateTheTime()
+	{
+		Time = DateTime.Now;
+		System.Diagnostics.Debug.WriteLine("StateHasChanged() called from UpdateTheTime");
+		StateHasChanged();
+	}
+
+	public override Task SetParametersAsync(ParameterCollection parameters)
+	{
+		System.Diagnostics.Debug.WriteLine("SetParametersAsync()");
+		return base.SetParametersAsync(parameters);
+	}
+
+	protected override void OnInit()
+	{
+		System.Diagnostics.Debug.WriteLine("OnInit()");
+		Timer = new System.Threading.Timer(_ => UpdateTheTime(), null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
+		base.OnInit();
+	}
+
+	protected override Task OnInitAsync()
+	{
+		System.Diagnostics.Debug.WriteLine("OnInitAsync()");
+		return base.OnInitAsync();
+	}
+
+	protected override void OnParametersSet()
+	{
+		System.Diagnostics.Debug.WriteLine("OnParametersSet()");
+		base.OnParametersSet();
+	}
+
+	protected override Task OnParametersSetAsync()
+	{
+		System.Diagnostics.Debug.WriteLine("OnParametersSetAsync()");
+		return base.OnParametersSetAsync();
+	}
+
+	protected override void OnAfterRender()
+	{
+		System.Diagnostics.Debug.WriteLine("OnAfterRender()");
+		base.OnAfterRender();
+	}
+
+	protected override Task OnAfterRenderAsync()
+	{
+		System.Diagnostics.Debug.WriteLine("OnAfterRenderAsyc()");
+		return base.OnAfterRenderAsync();
+	}
+
+}

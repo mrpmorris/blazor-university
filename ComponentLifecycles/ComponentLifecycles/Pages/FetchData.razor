@@ -1,0 +1,111 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<h1>Look in the browser console output!</h1>
+
+@if (IsLoading)
+{
+	@:LOADING...
+}
+else
+{
+	<button @onclick=@LoadTheData>Click here to load some data</button>
+}
+@if (forecasts.Length > 0)
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Temp. (C)</th>
+				<th>Temp. (F)</th>
+				<th>Summary</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var forecast in forecasts)
+			{
+				<tr>
+					<td>@forecast.Date.ToShortDateString()</td>
+					<td>@forecast.TemperatureC</td>
+					<td>@forecast.TemperatureF</td>
+					<td>@forecast.Summary</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@code {
+	WeatherForecast[] forecasts = new WeatherForecast[0];
+	bool IsLoading = false;
+
+	protected async Task LoadTheData()
+	{
+		forecasts = new WeatherForecast[0];
+		IsLoading = true;
+		System.Diagnostics.Debug.WriteLine("LoadingTheData() fetching data");
+		forecasts = await Http.GetJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+		System.Diagnostics.Debug.WriteLine("LoadingTheData() data fetched");
+
+
+		System.Diagnostics.Debug.WriteLine("LoadingTheData() pausing for 5 seconds");
+		await Task.Delay(5000);
+		System.Diagnostics.Debug.WriteLine("LoadingTheData() finished");
+
+		IsLoading = false;
+	}
+
+	public override Task SetParametersAsync(ParameterCollection parameters)
+	{
+		System.Diagnostics.Debug.WriteLine("SetParametersAsync()");
+		return base.SetParametersAsync(parameters);
+	}
+
+	protected override void OnInit()
+	{
+		System.Diagnostics.Debug.WriteLine("OnInit()");
+		base.OnInit();
+	}
+
+	protected override Task OnInitAsync()
+	{
+		System.Diagnostics.Debug.WriteLine("OnInitAsync()");
+		return base.OnInitAsync();
+	}
+
+	protected override void OnParametersSet()
+	{
+		System.Diagnostics.Debug.WriteLine("OnParametersSet()");
+		base.OnParametersSet();
+	}
+
+	protected override Task OnParametersSetAsync()
+	{
+		System.Diagnostics.Debug.WriteLine("OnParametersSetAsync()");
+		return base.OnParametersSetAsync();
+	}
+
+	protected override void OnAfterRender()
+	{
+		System.Diagnostics.Debug.WriteLine("OnAfterRender()");
+		base.OnAfterRender();
+	}
+
+	protected override Task OnAfterRenderAsync()
+	{
+		System.Diagnostics.Debug.WriteLine("OnAfterRenderAsyc()");
+		return base.OnAfterRenderAsync();
+	}
+
+	class WeatherForecast
+	{
+		public DateTime Date { get; set; }
+
+		public int TemperatureC { get; set; }
+
+		public int TemperatureF { get; set; }
+
+		public string Summary { get; set; }
+	}
+}
