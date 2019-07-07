@@ -1,0 +1,16 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+<p>The counter value is @counter</p>
+<button class="btn btn-primary" @onclick=@IncrementCounter>Increment counter</button>
+
+<MyFirstComponent @bind-CurrentCounterValue=@counter></MyFirstComponent>
+
+@code {
+	private int counter = 42;
+
+	private void IncrementCounter()
+	{
+		counter++;
+	}
+}
