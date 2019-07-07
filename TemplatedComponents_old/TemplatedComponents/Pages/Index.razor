@@ -1,0 +1,22 @@
+﻿@page "/"
+
+<Collapsible>Hello world!</Collapsible>
+
+<TabControl @ref="TabControl">
+	<TabPage Text="Tab 1">
+		<h1>The first tab</h1>
+	</TabPage>
+	<TabPage Text="Tab 2" @ref="TabPage2">
+		<TabTemplate>
+			<button @onclick=@( () => TabControl.ActivePage = TabPage2 )>Tab two</button>
+		</TabTemplate>
+		<ChildContent>
+			<h1>The second tab</h1>
+		</ChildContent>
+	</TabPage>
+</TabControl>
+
+@code {
+	TabControl TabControl;
+	TabPage TabPage2;
+}
