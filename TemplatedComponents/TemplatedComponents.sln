@@ -5,11 +5,15 @@ VisualStudioVersion = 16.0.29006.145
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Collapsible", "01 - Collapsible", "{52D3D624-FCEE-4A42-A396-B8A3BA424C16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplatedCompoents", "TemplatedComponents1\TemplatedCompoents\TemplatedCompoents.csproj", "{E5C98154-CEDB-4E4A-9845-C0C794D1E8A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplatedCompoents", "TemplatedComponents1\TemplatedCompoents\TemplatedCompoents.csproj", "{E5C98154-CEDB-4E4A-9845-C0C794D1E8A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - TabControl", "02 - TabControl", "{0CFCE670-790C-4F9A-AAB7-9F4A5AB765C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplatedComponents", "TemplatedComponents2\TemplatedComponents\TemplatedComponents.csproj", "{781E1F89-07A7-4C36-8993-3A4C04527B1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplatedComponents", "TemplatedComponents2\TemplatedComponents\TemplatedComponents.csproj", "{781E1F89-07A7-4C36-8993-3A4C04527B1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Generic RenderFragments", "03 - Generic RenderFragments", "{003368F2-FFF8-4870-9AE6-186291BA5918}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplatedComponents", "TemplatedComponents3\TemplatedComponents\TemplatedComponents.csproj", "{7AB640E6-6ABE-45E2-B947-B69C7F0BD6CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{781E1F89-07A7-4C36-8993-3A4C04527B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{781E1F89-07A7-4C36-8993-3A4C04527B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{781E1F89-07A7-4C36-8993-3A4C04527B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB640E6-6ABE-45E2-B947-B69C7F0BD6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB640E6-6ABE-45E2-B947-B69C7F0BD6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB640E6-6ABE-45E2-B947-B69C7F0BD6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB640E6-6ABE-45E2-B947-B69C7F0BD6CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E5C98154-CEDB-4E4A-9845-C0C794D1E8A5} = {52D3D624-FCEE-4A42-A396-B8A3BA424C16}
 		{781E1F89-07A7-4C36-8993-3A4C04527B1D} = {0CFCE670-790C-4F9A-AAB7-9F4A5AB765C8}
+		{7AB640E6-6ABE-45E2-B947-B69C7F0BD6CE} = {003368F2-FFF8-4870-9AE6-186291BA5918}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C48443D5-4409-465E-85B0-22549865D117}
