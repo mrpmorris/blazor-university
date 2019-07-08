@@ -1,4 +1,4 @@
-﻿@if (Parent.ActivePage == this)
+@if (Parent.ActivePage == this)
 {
 	@ChildContent
 }
@@ -6,7 +6,6 @@
 @code {
 	[CascadingParameter] TabControl Parent { get; set; }
 	[Parameter] RenderFragment ChildContent { get; set; }
-	[Parameter] public RenderFragment TabTemplate { get; private set; }
 	[Parameter] public string Text { get; set; }
 
 	protected override void OnInit()

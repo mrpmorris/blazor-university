@@ -1,34 +1,24 @@
-﻿@using System.Collections.Generic
-
 <CascadingValue Value="this">
-	@if (@TabsTemplate != null)
-	{
-		@TabsTemplate(Pages)
-	}
-	else
-	{
-		<div class="btn-group" role="group">
-			@foreach (TabPage tabPage in Pages)
-			{
-				if (tabPage.TabTemplate != null)
-				{
-					@tabPage.TabTemplate
-				}
-				else
-				{
-					<button type="button" class="btn @GetButtonClass(tabPage)" @onclick=@( () => ActivatePage(tabPage) )>@tabPage.Text</button>
-				}
-			}
-		</div>
-	}
+	<div class="btn-group" role="group">
+		@foreach (TabPage tabPage in Pages)
+		{
+			<button type="button"
+					class="btn @GetButtonClass(tabPage)"
+					@onclick=@( () => ActivatePage(tabPage) )>
+				@tabPage.Text
+			</button>
+		}
+	</div>
 	@ChildContent
 </CascadingValue>
 
 @code {
+	// Next line is needed so we are able to add <TabPage> components inside
 	[Parameter] RenderFragment ChildContent { get; set; }
-	[Parameter] RenderFragment<IEnumerable<TabPage>> TabsTemplate { get; set; }
+
 	public TabPage ActivePage { get; set; }
 	List<TabPage> Pages = new List<TabPage>();
+
 
 	internal void AddPage(TabPage tabPage)
 	{
@@ -40,7 +30,6 @@
 
 	string GetButtonClass(TabPage page)
 	{
-
 		return page == ActivePage ? "btn-primary" : "btn-secondary";
 	}
 
