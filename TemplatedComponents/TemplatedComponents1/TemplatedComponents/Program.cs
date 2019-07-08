@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace TemplatedCompoents
+namespace TemplatedComponents
 {
     public class Program
     {
