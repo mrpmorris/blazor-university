@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Route parameters", "02
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteParameters", "RouteParameters\RouteParameters.csproj", "{F8965460-E5C6-4093-9BDE-D86ADEF18B52}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Constrained route parameters", "03 - Constrained route parameters", "{58DB26E0-7773-4FBB-BD23-DBD7553A9728}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstrainedRouteParameters", "ConstrainedRouteParameters\ConstrainedRouteParameters.csproj", "{040654C3-73E8-43CE-972A-4B6A6D8887C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{F8965460-E5C6-4093-9BDE-D86ADEF18B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8965460-E5C6-4093-9BDE-D86ADEF18B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8965460-E5C6-4093-9BDE-D86ADEF18B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{040654C3-73E8-43CE-972A-4B6A6D8887C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{040654C3-73E8-43CE-972A-4B6A6D8887C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{040654C3-73E8-43CE-972A-4B6A6D8887C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{040654C3-73E8-43CE-972A-4B6A6D8887C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F73B0300-CF7D-4E3F-A4B0-1F605FD67CC8} = {87EE22FA-5242-48C4-A160-89E67D156A11}
 		{F8965460-E5C6-4093-9BDE-D86ADEF18B52} = {7BFFBBFB-A0B1-4F6D-B9EC-E99C03FCF08C}
+		{040654C3-73E8-43CE-972A-4B6A6D8887C8} = {58DB26E0-7773-4FBB-BD23-DBD7553A9728}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92854C58-63A7-4E15-8D9D-8762B3847D23}
