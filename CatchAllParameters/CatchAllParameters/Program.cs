@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace TemplatedComponents
+namespace CatchAllParameters
 {
     public class Program
     {
