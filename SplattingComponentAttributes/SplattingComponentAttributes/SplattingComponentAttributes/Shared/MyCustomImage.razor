@@ -1,9 +1,15 @@
-﻿<div class="row">
-	<img src=@src/>
+﻿<div
+	class="row"
+	role="img"
+	aria-label=@alt>
+	<img
+		src=@src
+		@attributes=@AllOtherAttributes />
 </div>
 
 @code 
 {
+	[Parameter] string alt { get; set; }
 	[Parameter] string src { get; set; }
-	//[Parameter(CaptureUnmatchedValues=true)] Dictionary<string, object> AllOtherAttributes { get; set; }
+	[Parameter(CaptureUnmatchedValues = true)] Dictionary<string, object> AllOtherAttributes { get; set; }
 }
