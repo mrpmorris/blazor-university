@@ -1,7 +1,0 @@
-﻿<div @attributes=@UnmatchedParameters>
-</div>
-
-@code {
-	[Parameter] string Title { get; set; } = "No title set";
-	[Parameter(CaptureUnmatchedValues = true)] Dictionary<string, object> UnmatchedParameters { get; set; }
-}
