@@ -1,0 +1,15 @@
+﻿<div @attributes=MyCodeGeneratedAttributes/>
+
+@code
+{
+	Dictionary<string, object> MyCodeGeneratedAttributes;
+
+	protected override void OnInit()
+	{
+		MyCodeGeneratedAttributes = new Dictionary<string, object>();
+		for(int index = 1; index <= 5; index++)
+		{
+			MyCodeGeneratedAttributes["attribute_" + index] = index;
+		}
+	}
+}

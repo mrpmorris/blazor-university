@@ -1,0 +1,9 @@
+﻿<div class="row">
+	<img src=@src/>
+</div>
+
+@code 
+{
+	[Parameter] string src { get; set; }
+	//[Parameter(CaptureUnmatchedValues=true)] Dictionary<string, object> AllOtherAttributes { get; set; }
+}
