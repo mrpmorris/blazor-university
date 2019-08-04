@@ -20,4 +20,11 @@
 	{
 		CurrentCount++;
 	}
+
+	public override Task SetParametersAsync(ParameterCollection parameters)
+	{
+		CurrentCount = 0;
+		return base.SetParametersAsync(parameters);
+	}
+
 }
