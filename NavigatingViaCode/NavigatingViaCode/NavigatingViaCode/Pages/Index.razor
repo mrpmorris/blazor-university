@@ -1,0 +1,15 @@
+﻿@page "/"
+@inject IUriHelper UriHelper
+
+<input type="number" @bind-value=CurrentValue/>
+<button @onclick=Navigate>Navigate</button>
+
+@code
+{
+	int CurrentValue = 42;
+
+	void Navigate()
+	{
+		UriHelper.NavigateTo("/counter/" + CurrentValue);
+	}
+}
