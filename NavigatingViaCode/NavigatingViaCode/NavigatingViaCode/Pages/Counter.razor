@@ -1,6 +1,6 @@
 ﻿@page "/"
 @page "/counter/{CurrentCount:int}"
-@inject IUriHelper UriHelper
+@inherits CounterBase
 
 <h1>Counter value = @CurrentCount</h1>
 
@@ -14,7 +14,7 @@
 	<input value=@CurrentCount readonly class="form-control" />
 	<button @onclick=@( () => AlterBy(1) ) class="btn btn-primary">+</button>
 </div>
-
+<a href="/Counter/0">Reset</a>
 
 @code {
 	[Parameter] int CurrentCount { get; set; }
@@ -24,6 +24,10 @@
 	void AlterBy(int adjustment)
 	{
 		int newCount = CurrentCount + adjustment;
+
+		if (newCount > 5)
+			UriHelper.NavigateTo("https://ibm.com");
+
 		UriHelper.NavigateTo("/counter/" + newCount, forceLoad);
 	}
 }
