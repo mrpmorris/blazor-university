@@ -1,15 +1,10 @@
 @inherits LayoutComponentBase
-@inject IUriHelper UriHelper
 
 <div class="sidebar">
 	<NavMenu />
 </div>
 
 <div class="main">
-	<div class="top-row px-4">
-		@UriHelper.GetAbsoluteUri()
-	</div>
-
 	<div class="content px-4">
 		@Body
 	</div>

@@ -1,17 +1,29 @@
-﻿@page "/counter"
-@page "/counter/{currentCount:int}"
+﻿@page "/"
+@page "/counter/{CurrentCount:int}"
+@inject IUriHelper UriHelper
 
-<h1>Counter</h1>
+<h1>Counter value = @CurrentCount</h1>
 
-<p>Current count: @CurrentCount</p>
+<div class="form-check">
+	<input @bind=@forceLoad type="checkbox" class="form-check-input" id="ForceLoadCheckbox"/>
+	<label class="form-check-label" for="ForceLoadCheckbox">Force page reload on navigate</label>
+</div>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<div class="btn-group" role="group">
+	<button @onclick=@( () => AlterBy(-1) ) class="btn btn-primary">-</button>
+	<input value=@CurrentCount readonly class="form-control" />
+	<button @onclick=@( () => AlterBy(1) ) class="btn btn-primary">+</button>
+</div>
+
 
 @code {
 	[Parameter] int CurrentCount { get; set; }
 
-	void IncrementCount()
+	bool forceLoad;
+
+	void AlterBy(int adjustment)
 	{
-		CurrentCount++;
+		int newCount = CurrentCount + adjustment;
+		UriHelper.NavigateTo("/counter/" + newCount, forceLoad);
 	}
 }
