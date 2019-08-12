@@ -1,5 +1,6 @@
 ﻿@page "/"
-@inherits IndexBase
+@implements IDisposable
+@using System.Threading
 
 <h1>Look in the browser console output!</h1>
 
@@ -7,6 +8,7 @@ The time now is @Time.ToString("hh:mm:ss")
 
 @code {
 	DateTime Time = DateTime.Now;
+	Timer Timer;
 
 	void UpdateTheTime()
 	{
@@ -58,4 +60,10 @@ The time now is @Time.ToString("hh:mm:ss")
 		return base.OnAfterRenderAsync();
 	}
 
+
+	public void Dispose()
+	{
+		Timer.Dispose();
+		System.Diagnostics.Debug.WriteLine("Disposed");
+	}
 }
