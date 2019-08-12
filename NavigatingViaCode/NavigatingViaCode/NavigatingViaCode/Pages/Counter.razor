@@ -1,11 +1,12 @@
 ﻿@page "/"
 @page "/counter/{CurrentCount:int}"
-@inherits CounterBase
+@implements IDisposable
+@inject IUriHelper UriHelper
 
 <h1>Counter value = @CurrentCount</h1>
 
 <div class="form-check">
-	<input @bind=@forceLoad type="checkbox" class="form-check-input" id="ForceLoadCheckbox"/>
+	<input @bind=@forceLoad type="checkbox" class="form-check-input" id="ForceLoadCheckbox" />
 	<label class="form-check-label" for="ForceLoadCheckbox">Force page reload on navigate</label>
 </div>
 
@@ -29,5 +30,24 @@
 			UriHelper.NavigateTo("https://ibm.com");
 
 		UriHelper.NavigateTo("/counter/" + newCount, forceLoad);
+	}
+
+	protected override void OnInit()
+	{
+		// Subscribe to the event
+		UriHelper.OnLocationChanged += LocationChanged;
+		base.OnInit();
+	}
+
+	private void LocationChanged(object sender, LocationChangedEventArgs e)
+	{
+		string navigationMethod = e.IsNavigationIntercepted ? "HTML" : "code";
+		System.Diagnostics.Debug.WriteLine($"Notified of navigation via {navigationMethod} to {e.Location}");
+	}
+
+	void IDisposable.Dispose()
+	{
+		// Unsubscribe from the event when our component is disposed
+		UriHelper.OnLocationChanged -= LocationChanged;
 	}
 }
