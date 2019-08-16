@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Layouts", "Layouts", "{620F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatingALayout", "Layouts\CreatingALayout\CreatingALayout.csproj", "{322334A4-4D66-4150-AFD0-3A578F5EFBE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingALayout", "Layouts\UsingALayout\UsingALayout.csproj", "{49BD3A6E-6E8A-4B15-9B9B-8E635F349816}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{322334A4-4D66-4150-AFD0-3A578F5EFBE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{322334A4-4D66-4150-AFD0-3A578F5EFBE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{322334A4-4D66-4150-AFD0-3A578F5EFBE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49BD3A6E-6E8A-4B15-9B9B-8E635F349816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49BD3A6E-6E8A-4B15-9B9B-8E635F349816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49BD3A6E-6E8A-4B15-9B9B-8E635F349816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49BD3A6E-6E8A-4B15-9B9B-8E635F349816}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{322334A4-4D66-4150-AFD0-3A578F5EFBE2} = {620FE569-6B1A-41E6-8DB1-FEBC9E33E3AF}
+		{49BD3A6E-6E8A-4B15-9B9B-8E635F349816} = {620FE569-6B1A-41E6-8DB1-FEBC9E33E3AF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
