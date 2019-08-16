@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace CascadingLayouts
+namespace NestedLayouts
 {
 	public class Program
 	{
