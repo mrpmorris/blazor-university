@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecifyingALayoutExplicitly
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NestedLayouts", "Layouts\NestedLayouts\NestedLayouts.csproj", "{AB1ADD1F-142E-49EC-A22A-C88DD40F42F3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{D3157A64-22C7-45D8-A02E-B22ED4282932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Components", "Components\Components\Components.csproj", "{EDE6BB64-9067-485E-9FC5-55ADD8582DB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{AB1ADD1F-142E-49EC-A22A-C88DD40F42F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB1ADD1F-142E-49EC-A22A-C88DD40F42F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB1ADD1F-142E-49EC-A22A-C88DD40F42F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDE6BB64-9067-485E-9FC5-55ADD8582DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDE6BB64-9067-485E-9FC5-55ADD8582DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDE6BB64-9067-485E-9FC5-55ADD8582DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDE6BB64-9067-485E-9FC5-55ADD8582DB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 		{49BD3A6E-6E8A-4B15-9B9B-8E635F349816} = {620FE569-6B1A-41E6-8DB1-FEBC9E33E3AF}
 		{D0D8DF6D-979C-49C8-9109-344F37EC1708} = {620FE569-6B1A-41E6-8DB1-FEBC9E33E3AF}
 		{AB1ADD1F-142E-49EC-A22A-C88DD40F42F3} = {620FE569-6B1A-41E6-8DB1-FEBC9E33E3AF}
+		{EDE6BB64-9067-485E-9FC5-55ADD8582DB0} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
