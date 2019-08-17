@@ -1,0 +1,11 @@
+﻿@page "/fail2"
+
+<p>This code compiles but doesn't do what we want. Right-click and Inspect Element to see.</p>
+
+<div @IfYouCanSeeThisTextThenTheCodeWasNotExecutedHere />
+<span>@IfYouCanSeeThisTextThenTheCodeWasNotExecutedHere</span>
+
+@code
+{
+	string IfYouCanSeeThisTextThenTheCodeWasNotExecutedHere = "The code here was executed";
+}

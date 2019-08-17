@@ -1,0 +1,24 @@
+﻿@page "/"
+
+<p>This won't event compile, so it is shown only as plain HTML for demonstration purposes.</p>
+
+&lt;img @@foreach(var nameAndValue in AdditionalAttributes)
+	 {
+	 @@nameAndValue.Key=@@nameAndValue.Value
+	 }
+	 src="https://randomuser.me/api/portraits/lego/1.jpg" /&gt;
+
+@code
+{
+	Dictionary<string, object> AdditionalAttributes;
+
+	protected override void OnInitialized()
+	{
+		AdditionalAttributes = new Dictionary<string, object>
+		{
+			["id"] = "EmmetImage",
+			["alt"] = "A photo of Emmet"
+		};
+		base.OnInitialized();
+	}
+}
