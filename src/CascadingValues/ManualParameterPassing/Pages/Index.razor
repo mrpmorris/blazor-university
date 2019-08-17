@@ -1,0 +1,14 @@
+﻿@page "/"
+
+<h1>Toggle the options</h1>
+<input @bind-value=firstOptionValue type="checkbox"/> first option
+<br />
+<input @bind-value=secondOptionValue type="checkbox"/> first option
+<br />
+
+<FirstLevelComponent FirstOption=@firstOptionValue SecondOption=@secondOptionValue/>
+
+@code {
+	bool firstOptionValue;
+	bool secondOptionValue;
+}

@@ -1,0 +1,13 @@
+﻿<h3>FirstLevelComponent</h3>
+
+<ul>
+	<li><SecondLevelComponent FirstOption=@FirstOption SecondOption=@SecondOption/></li>
+</ul>
+
+@code {
+	[Parameter]
+	public bool FirstOption { get; set; }
+
+	[Parameter]
+	public bool SecondOption { get; set; }
+}
