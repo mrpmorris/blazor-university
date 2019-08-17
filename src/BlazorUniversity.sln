@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverridingCascadedValues", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGeneratedHtmlAttributes", "Components\CodeGeneratedHtmlAttributes\CodeGeneratedHtmlAttributes.csproj", "{3CF364E1-0688-469C-B4A1-59BD4A641B62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapturingUnexpectedParameters", "Components\CapturingUnexpectedParameters\CapturingUnexpectedParameters.csproj", "{0EA78E49-C85B-428F-8A2B-D1DB09DD68C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{3CF364E1-0688-469C-B4A1-59BD4A641B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CF364E1-0688-469C-B4A1-59BD4A641B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CF364E1-0688-469C-B4A1-59BD4A641B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA78E49-C85B-428F-8A2B-D1DB09DD68C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA78E49-C85B-428F-8A2B-D1DB09DD68C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA78E49-C85B-428F-8A2B-D1DB09DD68C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA78E49-C85B-428F-8A2B-D1DB09DD68C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +117,7 @@ Global
 		{66EC4BEF-E330-48A9-A924-BF53A9BA3290} = {F5BC85B9-E2B6-459C-BDE9-2BEC9EC7CC13}
 		{C84E113E-45D7-4F65-A89D-9B1AD7208E6C} = {F5BC85B9-E2B6-459C-BDE9-2BEC9EC7CC13}
 		{3CF364E1-0688-469C-B4A1-59BD4A641B62} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
+		{0EA78E49-C85B-428F-8A2B-D1DB09DD68C8} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
