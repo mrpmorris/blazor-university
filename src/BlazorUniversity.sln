@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualParameterPassing", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CascadingValuesByType", "CascadingValues\CascadingValuesByType\CascadingValuesByType.csproj", "{66EC4BEF-E330-48A9-A924-BF53A9BA3290}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverridingCascadedValues", "CascadingValues\OverridingCascadedValues\OverridingCascadedValues.csproj", "{C84E113E-45D7-4F65-A89D-9B1AD7208E6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{66EC4BEF-E330-48A9-A924-BF53A9BA3290}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66EC4BEF-E330-48A9-A924-BF53A9BA3290}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66EC4BEF-E330-48A9-A924-BF53A9BA3290}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C84E113E-45D7-4F65-A89D-9B1AD7208E6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84E113E-45D7-4F65-A89D-9B1AD7208E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84E113E-45D7-4F65-A89D-9B1AD7208E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84E113E-45D7-4F65-A89D-9B1AD7208E6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +103,7 @@ Global
 		{59E19DFD-71FD-46D2-90D8-609D50F60935} = {F5BC85B9-E2B6-459C-BDE9-2BEC9EC7CC13}
 		{D434C594-7B34-4351-B801-85B612F233EB} = {F5BC85B9-E2B6-459C-BDE9-2BEC9EC7CC13}
 		{66EC4BEF-E330-48A9-A924-BF53A9BA3290} = {F5BC85B9-E2B6-459C-BDE9-2BEC9EC7CC13}
+		{C84E113E-45D7-4F65-A89D-9B1AD7208E6C} = {F5BC85B9-E2B6-459C-BDE9-2BEC9EC7CC13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}

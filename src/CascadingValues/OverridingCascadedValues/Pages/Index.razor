@@ -1,0 +1,24 @@
+﻿@page "/"
+
+<CascadingValue Name="CascadedValue" Value=@CascadedValue>
+	<CascadingValue Name="ValueToOverride" Value=@OuterValue>
+		<h2>First level</h2>
+		<ViewSomeValues />
+
+		<CascadingValue Name="ValueToOverride" Value=@InnerValue>
+			<h2>Second level</h2>
+			<ViewSomeValues />
+		</CascadingValue>
+
+		<h2>Back to first level</h2>
+		<ViewSomeValues />
+
+	</CascadingValue>
+</CascadingValue>
+
+@code
+{
+	string CascadedValue = "CascadedValue";
+	string OuterValue = "Outer value";
+	string InnerValue = "Inner value";
+}
