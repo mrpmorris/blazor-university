@@ -1,0 +1,60 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+<button @onclick=@ChangeData>Change data</button>
+
+<style>
+	.card-img-top {
+		width: 150px;
+		height: 150px;
+	}
+</style>
+<ol>
+	@foreach (Person person in People)
+	{
+		<li class="card" @key=person.ID>
+			<img class="card-img-top" src="https://randomuser.me/api/portraits/men/@(person.ID).jpg" />
+			<div class="card-body">
+				<h5 class="card-title">
+					@person.GivenName @person.FamilyName
+				</h5>
+				<p class="card-text">
+					@person.GivenName @person.FamilyName has the id @person.ID
+				</p>
+			</div>
+		</li>
+	}
+</ol>
+
+@code {
+	List<Person> People = new List<Person>
+{
+		new Person(1, "Peter", "Morris"),
+		new Person(2, "Bob", "Monkhouse"),
+		new Person(3, "Frank", "Sinatra"),
+		new Person(4, "David", "Banner")
+	};
+
+	void ChangeData()
+	{
+		var person = People[0];
+		People.RemoveAt(0);
+		People.Add(person);
+	}
+
+	class Person
+	{
+		public int ID { get; set; }
+		public string GivenName { get; set; }
+		public string FamilyName { get; set; }
+
+		public Person(int id, string givenName, string familyName)
+		{
+			ID = id;
+			GivenName = givenName;
+			FamilyName = familyName;
+		}
+	}
+}
