@@ -41,9 +41,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComponentLifecycles", "Comp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RenderTrees", "RenderTrees", "{ADEA11C5-AE59-463B-8ACC-21BE9BAC85BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncrementalRenderTreeProof", "RenderTrees\IncrementalRenderTreeProof\IncrementalRenderTreeProof.csproj", "{71DAF449-18DB-4485-835D-4D784C048590}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IncrementalRenderTreeProof", "RenderTrees\IncrementalRenderTreeProof\IncrementalRenderTreeProof.csproj", "{71DAF449-18DB-4485-835D-4D784C048590}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimisingUsingKeys", "RenderTrees\OptimisingUsingKeys\OptimisingUsingKeys.csproj", "{8E15DCC8-B6A8-4C16-BFAD-520E0DCC1E9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptimisingUsingKeys", "RenderTrees\OptimisingUsingKeys\OptimisingUsingKeys.csproj", "{8E15DCC8-B6A8-4C16-BFAD-520E0DCC1E9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplatedComponents", "TemplatedComponents", "{791CE696-05BF-4ABE-B4B1-99817E2A41C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplatedComponents", "TemplatedComponents\TemplatedComponents\TemplatedComponents.csproj", "{54BB2132-446F-4705-B48F-8F533B3280D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +123,10 @@ Global
 		{8E15DCC8-B6A8-4C16-BFAD-520E0DCC1E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E15DCC8-B6A8-4C16-BFAD-520E0DCC1E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E15DCC8-B6A8-4C16-BFAD-520E0DCC1E9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54BB2132-446F-4705-B48F-8F533B3280D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54BB2132-446F-4705-B48F-8F533B3280D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54BB2132-446F-4705-B48F-8F533B3280D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54BB2132-446F-4705-B48F-8F533B3280D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,6 +149,7 @@ Global
 		{5E8A3BD4-17D2-4565-8832-DA9728885E7A} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
 		{71DAF449-18DB-4485-835D-4D784C048590} = {ADEA11C5-AE59-463B-8ACC-21BE9BAC85BB}
 		{8E15DCC8-B6A8-4C16-BFAD-520E0DCC1E9E} = {ADEA11C5-AE59-463B-8ACC-21BE9BAC85BB}
+		{54BB2132-446F-4705-B48F-8F533B3280D2} = {791CE696-05BF-4ABE-B4B1-99817E2A41C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
