@@ -1,0 +1,26 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+<button @onclick=@ChangeData>Change data</button>
+
+<ol>
+	@foreach (string item in Items)
+	{
+		<li>@item</li>
+	}
+</ol>
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code {
+	List<string> Items = new List<string> { "One", "Two", "3" };
+
+	void ChangeData()
+	{
+		Items[0] = "1";
+		Items[1] = "2";
+		Items.Add("4");
+	}
+}

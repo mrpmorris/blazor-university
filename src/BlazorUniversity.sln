@@ -19,25 +19,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components", "Components\Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreatingAComponent", "Components\CreatingAComponent\CreatingAComponent.csproj", "{83048389-266D-4024-8BC8-66B1CFEB9C69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneWayBinding", "Components\OneWayBinding\OneWayBinding.csproj", "{574F42D6-6B0D-40CA-8DAA-D0C1B59A284B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneWayBinding", "Components\OneWayBinding\OneWayBinding.csproj", "{574F42D6-6B0D-40CA-8DAA-D0C1B59A284B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoWayBinding", "Components\TwoWayBinding\TwoWayBinding.csproj", "{F6297C5D-2158-4E8D-9355-1D1A9F464013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWayBinding", "Components\TwoWayBinding\TwoWayBinding.csproj", "{F6297C5D-2158-4E8D-9355-1D1A9F464013}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CascadingValues", "CascadingValues", "{F5BC85B9-E2B6-459C-BDE9-2BEC9EC7CC13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CascadingValuesByName", "CascadingValues\CascadingValuesByName\CascadingValuesByName.csproj", "{59E19DFD-71FD-46D2-90D8-609D50F60935}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CascadingValuesByName", "CascadingValues\CascadingValuesByName\CascadingValuesByName.csproj", "{59E19DFD-71FD-46D2-90D8-609D50F60935}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualParameterPassing", "CascadingValues\ManualParameterPassing\ManualParameterPassing.csproj", "{D434C594-7B34-4351-B801-85B612F233EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManualParameterPassing", "CascadingValues\ManualParameterPassing\ManualParameterPassing.csproj", "{D434C594-7B34-4351-B801-85B612F233EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CascadingValuesByType", "CascadingValues\CascadingValuesByType\CascadingValuesByType.csproj", "{66EC4BEF-E330-48A9-A924-BF53A9BA3290}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CascadingValuesByType", "CascadingValues\CascadingValuesByType\CascadingValuesByType.csproj", "{66EC4BEF-E330-48A9-A924-BF53A9BA3290}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverridingCascadedValues", "CascadingValues\OverridingCascadedValues\OverridingCascadedValues.csproj", "{C84E113E-45D7-4F65-A89D-9B1AD7208E6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverridingCascadedValues", "CascadingValues\OverridingCascadedValues\OverridingCascadedValues.csproj", "{C84E113E-45D7-4F65-A89D-9B1AD7208E6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGeneratedHtmlAttributes", "Components\CodeGeneratedHtmlAttributes\CodeGeneratedHtmlAttributes.csproj", "{3CF364E1-0688-469C-B4A1-59BD4A641B62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeGeneratedHtmlAttributes", "Components\CodeGeneratedHtmlAttributes\CodeGeneratedHtmlAttributes.csproj", "{3CF364E1-0688-469C-B4A1-59BD4A641B62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapturingUnexpectedParameters", "Components\CapturingUnexpectedParameters\CapturingUnexpectedParameters.csproj", "{0EA78E49-C85B-428F-8A2B-D1DB09DD68C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapturingUnexpectedParameters", "Components\CapturingUnexpectedParameters\CapturingUnexpectedParameters.csproj", "{0EA78E49-C85B-428F-8A2B-D1DB09DD68C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentLifecycles", "Components\ComponentLifecycles\ComponentLifecycles.csproj", "{5E8A3BD4-17D2-4565-8832-DA9728885E7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComponentLifecycles", "Components\ComponentLifecycles\ComponentLifecycles.csproj", "{5E8A3BD4-17D2-4565-8832-DA9728885E7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RenderTrees", "RenderTrees", "{ADEA11C5-AE59-463B-8ACC-21BE9BAC85BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncrementalRenderTreeProof", "RenderTrees\IncrementalRenderTreeProof\IncrementalRenderTreeProof.csproj", "{71DAF449-18DB-4485-835D-4D784C048590}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +109,10 @@ Global
 		{5E8A3BD4-17D2-4565-8832-DA9728885E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E8A3BD4-17D2-4565-8832-DA9728885E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E8A3BD4-17D2-4565-8832-DA9728885E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71DAF449-18DB-4485-835D-4D784C048590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71DAF449-18DB-4485-835D-4D784C048590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71DAF449-18DB-4485-835D-4D784C048590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71DAF449-18DB-4485-835D-4D784C048590}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +133,7 @@ Global
 		{3CF364E1-0688-469C-B4A1-59BD4A641B62} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
 		{0EA78E49-C85B-428F-8A2B-D1DB09DD68C8} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
 		{5E8A3BD4-17D2-4565-8832-DA9728885E7A} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
+		{71DAF449-18DB-4485-835D-4D784C048590} = {ADEA11C5-AE59-463B-8ACC-21BE9BAC85BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
