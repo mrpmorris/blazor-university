@@ -1,0 +1,25 @@
+﻿@page "/"
+@page "/purchase-order/{OrderNumber:int}"
+
+<h1>
+	Order number:
+	@if (!OrderNumber.HasValue)
+	{
+		@:None
+	}
+	else
+	{
+		@OrderNumber
+	}
+</h1>
+<h3>Select a purchase order</h3>
+<ul>
+	<li><a href="/purchase-order/1/">Order 1</a></li>
+	<li><a href="/purchase-order/2/">Order 2</a></li>
+	<li><a href="/purchase-order/42/">Order 42</a></li>
+</ul>
+<a href="/purchase-order/create" class="btn btn-primary">Create</a>
+
+@code {
+	[Parameter] public int? OrderNumber { get; set; }
+}
