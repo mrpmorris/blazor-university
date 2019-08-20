@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace NavigationViaHtml
+namespace NavigatingViaHtml
 {
 	public class Program
 	{

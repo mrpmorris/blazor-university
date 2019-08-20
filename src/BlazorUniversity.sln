@@ -55,19 +55,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassingDataToARenderFragmen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Routing", "Routing", "{B57299D8-10B2-4422-8E44-D694AB01E3FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapturingAParameterValue", "Routing\CapturingAParameterValue\CapturingAParameterValue.csproj", "{9620EEB0-5170-4B7F-94D2-66882A610B10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapturingAParameterValue", "Routing\CapturingAParameterValue\CapturingAParameterValue.csproj", "{9620EEB0-5170-4B7F-94D2-66882A610B10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstrainingRouteParameters", "Routing\ConstrainingRouteParameters\ConstrainingRouteParameters.csproj", "{5F889720-5765-4299-A169-AE5AEEB95501}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConstrainingRouteParameters", "Routing\ConstrainingRouteParameters\ConstrainingRouteParameters.csproj", "{5F889720-5765-4299-A169-AE5AEEB95501}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionalRouteParameters", "Routing\OptionalRouteParameters\OptionalRouteParameters.csproj", "{C56CADA0-8A2D-4AFF-AEC2-B34EBC0D8E62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionalRouteParameters", "Routing\OptionalRouteParameters\OptionalRouteParameters.csproj", "{C56CADA0-8A2D-4AFF-AEC2-B34EBC0D8E62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionalRouteParametersWithDefaultValues", "Routing\OptionalRouteParametersWithDefaultValues\OptionalRouteParametersWithDefaultValues.csproj", "{CC58404A-376D-4CC5-8679-7E90E7576EF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionalRouteParametersWithDefaultValues", "Routing\OptionalRouteParametersWithDefaultValues\OptionalRouteParametersWithDefaultValues.csproj", "{CC58404A-376D-4CC5-8679-7E90E7576EF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageNotFound", "Routing\PageNotFound\PageNotFound.csproj", "{C84E6170-5B02-416C-87A1-F3FF8ACA123E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageNotFound", "Routing\PageNotFound\PageNotFound.csproj", "{C84E6170-5B02-416C-87A1-F3FF8ACA123E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NavigatingViaCode", "Routing\NavigatingViaCode\NavigatingViaCode.csproj", "{C6CA08D2-881C-4B19-9A52-A42EF8F04DC9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NavigationViaHtml", "Routing\NavigationViaHtml\NavigationViaHtml.csproj", "{8FCF4916-E151-4011-B74F-4AD0AE4A4C28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NavigatingViaHtml", "Routing\NavigatingViaHtml\NavigatingViaHtml.csproj", "{277D8A30-2608-4204-ACAE-9DBDADB37561}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -179,10 +179,10 @@ Global
 		{C6CA08D2-881C-4B19-9A52-A42EF8F04DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6CA08D2-881C-4B19-9A52-A42EF8F04DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6CA08D2-881C-4B19-9A52-A42EF8F04DC9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8FCF4916-E151-4011-B74F-4AD0AE4A4C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FCF4916-E151-4011-B74F-4AD0AE4A4C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FCF4916-E151-4011-B74F-4AD0AE4A4C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FCF4916-E151-4011-B74F-4AD0AE4A4C28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{277D8A30-2608-4204-ACAE-9DBDADB37561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277D8A30-2608-4204-ACAE-9DBDADB37561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{277D8A30-2608-4204-ACAE-9DBDADB37561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{277D8A30-2608-4204-ACAE-9DBDADB37561}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -214,7 +214,7 @@ Global
 		{CC58404A-376D-4CC5-8679-7E90E7576EF5} = {B57299D8-10B2-4422-8E44-D694AB01E3FD}
 		{C84E6170-5B02-416C-87A1-F3FF8ACA123E} = {B57299D8-10B2-4422-8E44-D694AB01E3FD}
 		{C6CA08D2-881C-4B19-9A52-A42EF8F04DC9} = {B57299D8-10B2-4422-8E44-D694AB01E3FD}
-		{8FCF4916-E151-4011-B74F-4AD0AE4A4C28} = {B57299D8-10B2-4422-8E44-D694AB01E3FD}
+		{277D8A30-2608-4204-ACAE-9DBDADB37561} = {B57299D8-10B2-4422-8E44-D694AB01E3FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
