@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapturingAParameterValue", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstrainingRouteParameters", "Routing\ConstrainingRouteParameters\ConstrainingRouteParameters.csproj", "{5F889720-5765-4299-A169-AE5AEEB95501}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionalRouteParameters", "Routing\OptionalRouteParameters\OptionalRouteParameters.csproj", "{C56CADA0-8A2D-4AFF-AEC2-B34EBC0D8E62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{5F889720-5765-4299-A169-AE5AEEB95501}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F889720-5765-4299-A169-AE5AEEB95501}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F889720-5765-4299-A169-AE5AEEB95501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56CADA0-8A2D-4AFF-AEC2-B34EBC0D8E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56CADA0-8A2D-4AFF-AEC2-B34EBC0D8E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56CADA0-8A2D-4AFF-AEC2-B34EBC0D8E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56CADA0-8A2D-4AFF-AEC2-B34EBC0D8E62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -180,6 +186,7 @@ Global
 		{BC25127E-4576-4826-92A5-9A4B4B6FAF2F} = {791CE696-05BF-4ABE-B4B1-99817E2A41C0}
 		{9620EEB0-5170-4B7F-94D2-66882A610B10} = {B57299D8-10B2-4422-8E44-D694AB01E3FD}
 		{5F889720-5765-4299-A169-AE5AEEB95501} = {B57299D8-10B2-4422-8E44-D694AB01E3FD}
+		{C56CADA0-8A2D-4AFF-AEC2-B34EBC0D8E62} = {B57299D8-10B2-4422-8E44-D694AB01E3FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
