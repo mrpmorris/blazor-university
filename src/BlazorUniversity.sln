@@ -49,9 +49,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplatedComponents", "Temp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplatedComponents", "TemplatedComponents\TemplatedComponents\TemplatedComponents.csproj", "{54BB2132-446F-4705-B48F-8F533B3280D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatingATabControl", "TemplatedComponents\CreatingATabControl\CreatingATabControl.csproj", "{5CA36C1A-2E96-4834-8182-935A8FF570E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreatingATabControl", "TemplatedComponents\CreatingATabControl\CreatingATabControl.csproj", "{5CA36C1A-2E96-4834-8182-935A8FF570E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassingDataToARenderFragment", "TemplatedComponents\PassingDataToARenderFragment\PassingDataToARenderFragment.csproj", "{BC25127E-4576-4826-92A5-9A4B4B6FAF2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassingDataToARenderFragment", "TemplatedComponents\PassingDataToARenderFragment\PassingDataToARenderFragment.csproj", "{BC25127E-4576-4826-92A5-9A4B4B6FAF2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Routing", "Routing", "{B57299D8-10B2-4422-8E44-D694AB01E3FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapturingAParameterValue", "Routing\CapturingAParameterValue\CapturingAParameterValue.csproj", "{9620EEB0-5170-4B7F-94D2-66882A610B10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,6 +143,10 @@ Global
 		{BC25127E-4576-4826-92A5-9A4B4B6FAF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC25127E-4576-4826-92A5-9A4B4B6FAF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC25127E-4576-4826-92A5-9A4B4B6FAF2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9620EEB0-5170-4B7F-94D2-66882A610B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9620EEB0-5170-4B7F-94D2-66882A610B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9620EEB0-5170-4B7F-94D2-66882A610B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9620EEB0-5170-4B7F-94D2-66882A610B10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,6 +172,7 @@ Global
 		{54BB2132-446F-4705-B48F-8F533B3280D2} = {791CE696-05BF-4ABE-B4B1-99817E2A41C0}
 		{5CA36C1A-2E96-4834-8182-935A8FF570E1} = {791CE696-05BF-4ABE-B4B1-99817E2A41C0}
 		{BC25127E-4576-4826-92A5-9A4B4B6FAF2F} = {791CE696-05BF-4ABE-B4B1-99817E2A41C0}
+		{9620EEB0-5170-4B7F-94D2-66882A610B10} = {B57299D8-10B2-4422-8E44-D694AB01E3FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
