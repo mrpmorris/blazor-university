@@ -1,0 +1,87 @@
+﻿@page "/"
+
+<div class="card">
+	<div class="card-header">
+		Input controls
+	</div>
+	<div class="card-body">
+		<EditForm Model=FormData>
+			<div class="form-check mb-3">
+				<InputCheckbox @bind-Value=FormData.SomeBooleanProperty id="MyInputCheckboxComponent" class="form-check-input" />
+				<label for="MyInputCheckboxComponent" class="form-check-label">
+					InputCheckbox
+				</label>
+			</div>
+			<div class="form-group mb-3">
+				<label for="MyInputDate">InputDate</label>
+				<InputDate @bind-Value=FormData.SomeDateTimeProperty id="MyInputDate" class="form-control" />
+			</div>
+			<div class="form-group mb-3">
+				<label for="MyInputNumber1">InputNumber (integer)</label>
+				<InputNumber @bind-Value=FormData.SomeIntegerProperty id="MyInputNumber1" class="form-control" ParsingErrorMessage="Must be an integer value" />
+			</div>
+			<div class="form-group mb-3">
+				<label for="MyInputNumber2">InputNumber (decimal)</label>
+				<InputNumber @bind-Value=FormData.SomeDecimalProperty id="MyInputNumber2" class="form-control" ParsingErrorMessage="Must be a decimal value" />
+			</div>
+			<div class="form-group mb-3">
+				<label for="MyInputText">InputText</label>
+				<InputText @bind-Value=FormData.SomeStringProperty id="MyInputText" class="form-control" />
+			</div>
+			<div class="form-group mb-3">
+				<label for="MyInputSelect">InputSelect</label>
+				<InputSelect @bind-Value=FormData.SomeSelectProperty id="MyInputSelect" class="form-control">
+					<option value="Pending">Pending</option>
+					<option value="Active">Active</option>
+					<option value="Suspended">Suspended</option>
+				</InputSelect>
+			</div>
+			<div class="form-group mb-3">
+				<label for="MyInputTextArea">InputTextArea</label>
+				<InputTextArea @bind-Value=FormData.SomeMultiLineStringProperty id="MyInputTextArea" class="form-control" />
+			</div>
+		</EditForm>
+	</div>
+</div>
+<hr />
+<div class="card">
+	<div class="card-header">Form data</div>
+	<div class="form-text">
+		<ul>
+			<li>SomeBooleanProperty : @FormData.SomeBooleanProperty</li>
+			<li>SomeDateTimeProperty : @FormData.SomeDateTimeProperty</li>
+			<li>SomeIntegerProperty : @FormData.SomeIntegerProperty</li>
+			<li>SomeDecimalProperty : @FormData.SomeDecimalProperty</li>
+			<li>SomeStringProperty : @FormData.SomeStringProperty</li>
+			<li>SomeSelectProperty : @FormData.SomeSelectProperty</li>
+			<li>
+				SomeMultiLineStringProperty :
+				<code><pre>@FormData.SomeMultiLineStringProperty</pre></code>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+@code
+{
+	SomeModel FormData = new SomeModel();
+
+	class SomeModel
+	{
+		public bool SomeBooleanProperty { get; set; }
+		public DateTime SomeDateTimeProperty { get; set; } = DateTime.Today;
+		public int SomeIntegerProperty { get; set; }
+		public decimal SomeDecimalProperty { get; set; }
+		public string SomeStringProperty { get; set; }
+		public string SomeMultiLineStringProperty { get; set; }
+		public State SomeSelectProperty { get; set; } = State.Pending;
+	}
+
+	public enum State
+	{
+		Pending,
+		Active,
+		Suspended
+	}
+}
