@@ -14,7 +14,7 @@
 			</div>
 			<div class="form-group mb-3">
 				<label for="MyInputDate">InputDate</label>
-				<InputDate @bind-Value=FormData.SomeDateTimeProperty id="MyInputDate" class="form-control" />
+				<InputDate @bind-Value=FormData.SomeDateTimeProperty id="MyInputDate" class="form-control" ParsingErrorMessage="Must be a date" />
 			</div>
 			<div class="form-group mb-3">
 				<label for="MyInputNumber1">InputNumber (integer)</label>
@@ -70,15 +70,15 @@
 	class SomeModel
 	{
 		public bool SomeBooleanProperty { get; set; }
-		public DateTime SomeDateTimeProperty { get; set; } = DateTime.Today;
+		public DateTime? SomeDateTimeProperty { get; set; }
 		public int SomeIntegerProperty { get; set; }
 		public decimal SomeDecimalProperty { get; set; }
 		public string SomeStringProperty { get; set; }
 		public string SomeMultiLineStringProperty { get; set; }
-		public State SomeSelectProperty { get; set; } = State.Pending;
+		public SomeStateEnum SomeSelectProperty { get; set; } = SomeStateEnum.Active;
 	}
 
-	public enum State
+	public enum SomeStateEnum
 	{
 		Pending,
 		Active,
