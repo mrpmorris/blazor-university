@@ -1,0 +1,18 @@
+﻿@page "/"
+
+<h1>Status: @Status</h1>
+<EditForm Model=Person OnSubmit=FormSubmitted>
+	<input type="submit" value="Submit" class="btn btn-primary"/>
+</EditForm>
+
+@code
+{
+	string Status = "Not submitted";
+	Person Person = new Person();
+
+	void FormSubmitted()
+	{
+		Status = "Form submitted";
+		// Post data to the server, etc
+	}
+}

@@ -69,6 +69,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NavigatingViaCode", "Routin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NavigatingViaHtml", "Routing\NavigatingViaHtml\NavigatingViaHtml.csproj", "{277D8A30-2608-4204-ACAE-9DBDADB37561}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{2D994367-A93E-4900-B41B-F5543F399973}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
