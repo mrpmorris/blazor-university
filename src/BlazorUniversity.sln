@@ -73,7 +73,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{2D994367
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicForm", "Forms\BasicForm\BasicForm.csproj", "{72DB2C11-E23C-484C-B062-F8025EF200A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormInputs", "Forms\FormInputs\FormInputs.csproj", "{82D3CD49-3420-4F55-A71F-7F30E83B0247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormInputs", "Forms\FormInputs\FormInputs.csproj", "{82D3CD49-3420-4F55-A71F-7F30E83B0247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritingFromInputBase", "Forms\InheritingFromInputBase\InheritingFromInputBase.csproj", "{7662DA6E-D8AB-4C01-80F0-15A1A08DD443}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -197,6 +199,10 @@ Global
 		{82D3CD49-3420-4F55-A71F-7F30E83B0247}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82D3CD49-3420-4F55-A71F-7F30E83B0247}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82D3CD49-3420-4F55-A71F-7F30E83B0247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7662DA6E-D8AB-4C01-80F0-15A1A08DD443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7662DA6E-D8AB-4C01-80F0-15A1A08DD443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7662DA6E-D8AB-4C01-80F0-15A1A08DD443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7662DA6E-D8AB-4C01-80F0-15A1A08DD443}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -231,6 +237,7 @@ Global
 		{277D8A30-2608-4204-ACAE-9DBDADB37561} = {B57299D8-10B2-4422-8E44-D694AB01E3FD}
 		{72DB2C11-E23C-484C-B062-F8025EF200A4} = {2D994367-A93E-4900-B41B-F5543F399973}
 		{82D3CD49-3420-4F55-A71F-7F30E83B0247} = {2D994367-A93E-4900-B41B-F5543F399973}
+		{7662DA6E-D8AB-4C01-80F0-15A1A08DD443} = {2D994367-A93E-4900-B41B-F5543F399973}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}

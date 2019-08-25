@@ -1,0 +1,23 @@
+﻿@page "/"
+@using System.Drawing
+
+<EditForm Model=CurrentPerson>
+	<InputColor @bind-Value=CurrentPerson.ChosenColor/>
+</EditForm>
+
+Chosen colour is @CurrentPerson.ChosenColor
+<div style="width:100px;height:100px;background-color:@ColorAsHex"/>
+
+@code {
+	Person CurrentPerson = new Person
+	{
+		ChosenColor = Color.Green
+	};
+
+	string ColorAsHex => InputColor.ColorToString(CurrentPerson.ChosenColor);
+
+	class Person
+	{
+		public Color ChosenColor { get; set; }
+	}
+}
