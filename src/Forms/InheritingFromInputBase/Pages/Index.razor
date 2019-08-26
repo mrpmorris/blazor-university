@@ -2,22 +2,22 @@
 @using System.Drawing
 
 <EditForm Model=CurrentPerson>
-	<InputColor @bind-Value=CurrentPerson.ChosenColor/>
+	<InputColor @bind-Value=CurrentPerson.FavoriteColor/>
 </EditForm>
 
-Chosen colour is @CurrentPerson.ChosenColor
+Favorite colour is @CurrentPerson.FavoriteColor
 <div style="width:100px;height:100px;background-color:@ColorAsHex"/>
 
 @code {
 	Person CurrentPerson = new Person
 	{
-		ChosenColor = Color.Green
+		FavoriteColor = Color.Green
 	};
 
-	string ColorAsHex => InputColor.ColorToString(CurrentPerson.ChosenColor);
+	string ColorAsHex => InputColor.ColorToString(CurrentPerson.FavoriteColor);
 
 	class Person
 	{
-		public Color ChosenColor { get; set; }
+		public Color FavoriteColor { get; set; }
 	}
 }

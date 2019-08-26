@@ -5,8 +5,6 @@
 <input type="color" @attributes=AdditionalAttributes class=@CssClass @bind-value=CurrentValueAsString/>
 
 @code {
-	static Regex Regex = new Regex("^#([0-9a-f]{2}){3}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-
 	[Parameter] public string ParsingErrorMessage { get; set; }
 
 	public static string ColorToString(Color value)
@@ -15,6 +13,7 @@
 	protected override string FormatValueAsString(Color value)
 		=> ColorToString(value);
 
+	static Regex Regex = new Regex("^#([0-9a-f]{2}){3}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 	protected override bool TryParseValueFromString(string value, out Color result, out string validationErrorMessage)
 	{
 		Match match = Regex.Match(value);
@@ -42,5 +41,4 @@
 		int result = (HexChars.IndexOf(hex[0]) * 16) + HexChars.IndexOf(hex[1]);
 		return (byte)result;
 	}
-
 }
