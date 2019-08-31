@@ -1,0 +1,47 @@
+﻿@page "/FullFormValidation"
+@using Models
+
+<h1>Form submission</h1>
+<p>
+	The previous two examples perform form validation, but Blazor currently has a limitation in that it will not validate the properties
+	of child objects (such as Person.Address.Country) unless we edit the value in the form first.
+</p>
+<p>
+	This example demonstrates a temporary solution to this problem that can be used until this limitation is addressed.
+</p>
+@if (LastSubmitResult != null)
+{
+	<h2>
+		Last submit status: @LastSubmitResult
+	</h2>
+}
+
+<EditForm Model=Person OnSubmit=FormSubmitted>
+	<DataAnnotationsValidator />
+	<div class="form-group">
+		<label for="Name">Name</label>
+		<InputText @bind-Value=Person.Name class="form-control" id="Name" />
+		<ValidationMessage For="() => Person.Name" />
+	</div>
+	<div class="form-group">
+		<label for="Age">Age</label>
+		<InputNumber @bind-Value=Person.Age class="form-control" id="Age" />
+		<ValidationMessage For=@(() => Person.Age) />
+	</div>
+	<AddressEdit Title="Home address" Address=Person.HomeAddress />
+	<input type="submit" class="btn btn-primary" value="Save" />
+</EditForm>
+
+@code {
+	Person Person = new Person();
+
+	string LastSubmitResult;
+
+	void FormSubmitted(EditContext editContext)
+	{
+		LastSubmitResult =
+			editContext.ValidateWholeForm()
+			? "Success - form was valid"
+			: "Failure - form was invalid";
+	}
+}

@@ -1,0 +1,46 @@
+﻿@page "/OnValidSubmit"
+@using Models
+
+<h1>Form submission</h1>
+<p>
+	This example shows how to hook up the <em>OnValidSubmit</em> and <em>OnInvalidSubmit</em> events.
+</p>
+@if (LastSubmitResult != null)
+{
+	<h2>
+		Last submit status: @LastSubmitResult
+	</h2>
+}
+
+<EditForm Model=Person OnValidSubmit=ValidFormSubmitted OnInvalidSubmit=InvalidFormSubmitted>
+	<DataAnnotationsValidator />
+	<div class="form-group">
+		<label for="Name">Name</label>
+		<InputText @bind-Value=Person.Name class="form-control" id="Name" />
+		<ValidationMessage For="() => Person.Name" />
+	</div>
+	<div class="form-group">
+		<label for="Age">Age</label>
+		<InputNumber @bind-Value=Person.Age class="form-control" id="Age" />
+		<ValidationMessage For=@(() => Person.Age) />
+	</div>
+	<AddressEdit Title="Home address" Address=Person.HomeAddress />
+	<input type="submit" class="btn btn-primary" value="Save" />
+</EditForm>
+
+@code {
+	Person Person = new Person();
+
+	string LastSubmitResult;
+
+	void ValidFormSubmitted(EditContext editContext)
+	{
+		LastSubmitResult = "OnValidSubmit was executed";
+	}
+
+	void InvalidFormSubmitted(EditContext editContext)
+	{
+		LastSubmitResult = "OnInvalidSubmit was executed";
+	}
+
+}
