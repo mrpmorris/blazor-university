@@ -42,16 +42,16 @@ namespace ComponentLifecycles.Pages
 			return base.OnParametersSetAsync();
 		}
 
-		protected override void OnAfterRender()
+		protected override void OnAfterRender(bool firstRender)
 		{
-			Log("OnAfterRender()");
-			base.OnAfterRender();
+			Log($"OnAfterRender({firstRender})");
+			base.OnAfterRender(firstRender);
 		}
 
-		protected override Task OnAfterRenderAsync()
+		protected override Task OnAfterRenderAsync(bool firstRender)
 		{
-			Log("OnAfterRenderAsyc()");
-			return base.OnAfterRenderAsync();
+			Log($"OnAfterRenderAsyc({firstRender})");
+			return base.OnAfterRenderAsync(firstRender);
 		}
 
 

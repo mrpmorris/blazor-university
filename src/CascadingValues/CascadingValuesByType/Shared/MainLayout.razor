@@ -38,13 +38,13 @@
 	string DateFormat { get; set; } = "yyyy-MM-dd";
 	bool ShowAnonymizedData { get; set; }
 
-	public void DateFormatChanged(UIChangeEventArgs e)
+	public void DateFormatChanged(ChangeEventArgs e)
 	{
 		DateFormat = (string)e.Value;
 		UserPreferences = new UserPreferences(DateFormat, ShowAnonymizedData);
 	}
 
-	public void ViewAnonymizedDataChanged(UIChangeEventArgs e)
+	public void ViewAnonymizedDataChanged(ChangeEventArgs e)
 	{
 		ShowAnonymizedData = (bool)e.Value;
 		UserPreferences = new UserPreferences(DateFormat, ShowAnonymizedData);
