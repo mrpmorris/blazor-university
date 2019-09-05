@@ -35,8 +35,9 @@
 
 	void FormSubmitted(EditContext editContext)
 	{
+		bool formIsValid = editContext.Validate();
 		LastSubmitResult =
-			editContext.Validate()
+			formIsValid
 			? "Success - form was valid"
 			: "Failure - form was invalid";
 	}
