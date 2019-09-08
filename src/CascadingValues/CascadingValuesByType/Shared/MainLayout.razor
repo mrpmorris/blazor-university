@@ -8,12 +8,12 @@
 	<div class="main">
 		<div class="top-row">
 			<div class="col-6">
-				<input id="ViewAnonymizedData" type="checkbox" @onchange="@ViewAnonymizedDataChanged" />
+				<input id="ViewAnonymizedData" type="checkbox" @onchange=ViewAnonymizedDataChanged />
 				<label for="ViewAnonymizedData">View anonymized data</label>
 			</div>
 			<div class="col-2">Date format</div>
 			<div class="col-4">
-				<select @onchange="@DateFormatChanged">
+				<select @onchange=DateFormatChanged>
 					<option>yyyy-MM-dd</option>
 					<option>dd/MM/yyyy</option>
 					<option>MM/dd/yyyy</option>

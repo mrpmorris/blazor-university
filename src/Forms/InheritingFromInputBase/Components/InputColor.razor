@@ -5,7 +5,8 @@
 <input type="color" @attributes=AdditionalAttributes class=@CssClass @bind-value=CurrentValueAsString/>
 
 @code {
-	[Parameter] public string ParsingErrorMessage { get; set; }
+	[Parameter] 
+	public string ParsingErrorMessage { get; set; }
 
 	public static string ColorToString(Color value)
 		=> $"#{value.R:x2}{value.G:x2}{value.B:x2}";

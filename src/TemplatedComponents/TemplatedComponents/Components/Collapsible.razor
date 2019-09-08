@@ -1,5 +1,5 @@
 ﻿<div class="row">
-	<a href="#" @onclick="@Toggle" class="col-12">@ActionText</a>
+	<a href="#" @onclick=Toggle class="col-12">@ActionText</a>
 	@if (!Collapsed)
 	{
 		<div class="col-12 card card-body">
@@ -10,8 +10,11 @@
 
 @code
 {
-	[Parameter] public RenderFragment ChildContent { get; set; }
-	[Parameter] public bool Collapsed { get; set; }
+	[Parameter]
+	public RenderFragment ChildContent { get; set; }
+
+	[Parameter]
+	public bool Collapsed { get; set; }
 
 	string ActionText { get => Collapsed ? "Expand" : "Collapse"; }
 

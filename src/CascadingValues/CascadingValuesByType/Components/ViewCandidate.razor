@@ -3,11 +3,14 @@
 <div class="row">
 	<div class="col-12">@(UserPreferences.ViewAnonymizedData ? "[Anonymous view]" : @Candidate.Name)</div>
 	<div class="col-12">
-		<ViewAddress Address="@Candidate.Address" IsPersonal=@true />
+		<ViewAddress Address=@Candidate.Address IsPersonal=@true />
 	</div>
 </div>
 @code
 {
-	[CascadingParameter] public UserPreferences UserPreferences { get; set; }
-	[Parameter] public Candidate Candidate { get; set; }
+	[CascadingParameter]
+	public UserPreferences UserPreferences { get; set; }
+
+	[Parameter]
+	public Candidate Candidate { get; set; }
 }

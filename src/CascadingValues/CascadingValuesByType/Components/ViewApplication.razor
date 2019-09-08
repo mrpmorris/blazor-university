@@ -10,13 +10,16 @@
 				<label class="col-12">Text</label>
 				<pre class="col-12">@Application.Text</pre>
 			</div>
-			<ViewCandidate Candidate="@Application.Candidate" />
+			<ViewCandidate Candidate=@Application.Candidate />
 		</div>
 	</div>
 </div>
 
 @code
 {
-	[CascadingParameter] public UserPreferences UserPreferences { get; set; }
-	[Parameter] public Application Application { get; set; }
+	[CascadingParameter]
+	public UserPreferences UserPreferences { get; set; }
+
+	[Parameter]
+	public Application Application { get; set; }
 }
