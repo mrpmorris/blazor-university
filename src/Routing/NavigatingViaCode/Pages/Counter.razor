@@ -15,7 +15,10 @@
 	<input value=@CurrentCount readonly class="form-control" />
 	<button @onclick=@( () => AlterBy(1) ) class="btn btn-primary">+</button>
 </div>
-<a href="/Counter/0">Reset</a>
+<a class="btn btn-secondary" href="/Counter/0">Reset</a>
+<p>
+	<em>Page redirects to ibm.com when count hits 10!</em>
+</p>
 
 @code {
 	[Parameter]
@@ -27,7 +30,7 @@
 	{
 		int newCount = CurrentCount + adjustment;
 
-		if (newCount > 5)
+		if (newCount >= 10)
 			NavigationManager.NavigateTo("https://ibm.com");
 
 		NavigationManager.NavigateTo("/counter/" + newCount, forceLoad);

@@ -1,8 +1,10 @@
-﻿<div>
+﻿@page "/counter"
+
+<div>
     CurrentCounterValue in MyFirstComponent is @CurrentCounterValue
 </div>
 
-<button @onclick=UpdateCurrentCounterValue>Update</button>
+<button class="btn btn-primary" @onclick=UpdateCurrentCounterValue>Update</button>
 
 @code {
     [Parameter]
