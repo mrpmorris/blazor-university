@@ -4,9 +4,9 @@
 	<div class="card mb-4">
 		@if (!string.IsNullOrEmpty(Title))
 		{
-			<div class="card-header">
-				@Title
-			</div>
+		<div class="card-header">
+			@Title
+		</div>
 		}
 		<div class="card-body">
 			<div class="row mb-4">
@@ -54,6 +54,9 @@
 
 @code
 {
-	[Parameter] public string Title { get; set; }
-	[Parameter] public Address Address { get; set; }
+	[Parameter]
+	public string Title { get; set; }
+
+	[Parameter]
+	public Address Address { get; set; }
 }

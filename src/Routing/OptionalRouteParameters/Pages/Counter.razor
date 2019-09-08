@@ -5,7 +5,7 @@
 
 <p style="@GetStyle()">Current count: @CurrentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick=IncrementCount>Click me</button>
 
 <ul>
 	<li><a href="/counter/42">Navigate to /counter/42</a></li>
@@ -14,7 +14,8 @@
 </ul>
 
 @code {
-	[Parameter] public int? CurrentCount { get; set; }
+	[Parameter]
+	public int? CurrentCount { get; set; }
 
 	void IncrementCount()
 	{

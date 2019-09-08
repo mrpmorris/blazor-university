@@ -21,8 +21,11 @@
 
 @code {
 	// Next line is needed so we are able to add <TabPage> components inside
-	[Parameter] public RenderFragment ChildContent { get; set; }
-	[Parameter] public RenderFragment<TabPage> TabTextTemplate { get; set; }
+	[Parameter]
+	public RenderFragment ChildContent { get; set; }
+
+	[Parameter]
+	public RenderFragment<TabPage> TabTextTemplate { get; set; }
 
 	public TabPage ActivePage { get; set; }
 	List<TabPage> Pages = new List<TabPage>();

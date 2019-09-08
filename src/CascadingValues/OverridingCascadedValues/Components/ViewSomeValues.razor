@@ -2,6 +2,9 @@
 
 @code
 {
-	[CascadingParameter(Name = "CascadedValue")] public string SomeValue1 { get; set; }
-	[CascadingParameter(Name = "ValueToOverride")] public string SomeValue2 { get; set; }
+	[CascadingParameter(Name = "CascadedValue")]
+	public string SomeValue1 { get; set; }
+
+	[CascadingParameter(Name = "ValueToOverride")]
+	public string SomeValue2 { get; set; }
 }

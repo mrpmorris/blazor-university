@@ -4,17 +4,20 @@
 		<div class="col-6">Closing date</div>
 		<div class="col-6">@Vacancy.ClosingDate.ToString(UserPreferences.DateFormat)</div>
 	</div>
-	<ViewAddress Address="@Vacancy.Address" />
+	<ViewAddress Address=@Vacancy.Address />
 	<hr />
 	<h4>Applications</h4>
 	@foreach (Application application in Vacancy.Applications)
 	{
-		<ViewApplication Application="@application" />
+		<ViewApplication Application=@application />
 	}
 </div>
 
 @code
 {
-	[CascadingParameter] public UserPreferences UserPreferences { get; set; }
-	[Parameter] public Vacancy Vacancy { get; set; }
+	[CascadingParameter]
+	public UserPreferences UserPreferences { get; set; }
+
+	[Parameter]
+	public Vacancy Vacancy { get; set; }
 }
