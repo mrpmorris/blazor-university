@@ -2,7 +2,7 @@
 @using System.Text.RegularExpressions
 @inherits InputBase<Color>
 
-<input type="color" @attributes=AdditionalAttributes class=@CssClass @bind-value=CurrentValueAsString/>
+<input type="color" @attributes=AdditionalAttributes class=@CssClass @bind=CurrentValueAsString/>
 
 @code {
 	[Parameter] 

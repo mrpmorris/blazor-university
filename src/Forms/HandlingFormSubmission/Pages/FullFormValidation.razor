@@ -16,7 +16,7 @@
 	</h2>
 }
 
-<EditForm Model=Person OnSubmit=FormSubmitted>
+<EditForm Model=@Person OnSubmit=@FormSubmitted>
 	<DataAnnotationsValidator />
 	<div class="form-group">
 		<label for="Name">Name</label>
@@ -28,7 +28,7 @@
 		<InputNumber @bind-Value=Person.Age class="form-control" id="Age" />
 		<ValidationMessage For=@(() => Person.Age) />
 	</div>
-	<AddressEdit Title="Home address" Address=Person.HomeAddress />
+	<AddressEdit Title="Home address" Address=@Person.HomeAddress />
 	<input type="submit" class="btn btn-primary" value="Save" />
 </EditForm>
 
