@@ -2,16 +2,35 @@
 @using FluentValidation.Results
 
 @code {
+	/// <summary>
+	/// The EditContext cascaded to us from the EditForm component.
+	/// This changes whenever EditForm.Model changes
+	/// </summary>
 	[CascadingParameter]
 	public EditContext EditContext { get; set; }
 
+	// Keep a reference to our previous edit context,
+	// so when know if SetParametersAsync changes it
 	private EditContext PreviousEditContext;
+
+	// Holds a list of IValidator instances to perform our actual validation
 	private IEnumerable<IValidator> Validators;
+
+	// This is where we register our validation errors for Blazor to pick up
+	// in the UI. Like EditContext, this instance should be discarded when
+	// EditForm.Model changes (for us, that's when EditContext changes).
 	private ValidationMessageStore ValidationMessageStore;
 
+	// Inject the service provider so we can create our IValidator instances
 	[Inject]
 	private IServiceProvider ServiceProvider { get; set; }
 
+	/// <summary>
+	/// Executed when a parameter or cascading parameter changes. We need
+	/// to know if the EditContext has changed as a consequence of
+	/// EditForm.Model changing.
+	/// </summary>
+	/// <see href="http://blazor-university.com/components/component-lifecycles/">component lifecycles</see>.
 	public async override Task SetParametersAsync(ParameterView parameters)
 	{
 		await base.SetParametersAsync(parameters);
@@ -22,6 +41,10 @@
 			EditContextChanged();
 	}
 
+	/// <summary>
+	/// We trigger this when SetParametersAsync is executed and results in us having a
+	/// new EditContext.
+	/// </summary>
 	void EditContextChanged()
 	{
 		PreviousEditContext = EditContext;
