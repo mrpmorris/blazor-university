@@ -39,6 +39,7 @@ namespace CustomValidation.Components
 
 			assembly.GetTypes()
 				.Where(t => !t.IsAbstract)
+				.Where(t => !t.IsGenericType)
 				.Where(t => t.IsClass)
 				.SelectMany(t => t.GetInterfaces()
 					.Select(i => new { Type = t, Interface = i })
