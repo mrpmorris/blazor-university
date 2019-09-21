@@ -114,6 +114,9 @@ namespace CustomValidation.Components
 			{
 				validatorTypes.Add(validatorType);
 				services.AddScoped(validatorType);
+				// Register an IValidator<TModel> too
+				Type validatorInterfaceType = typeof(IValidator<>).MakeGenericType(modelType);
+				services.AddScoped(validatorInterfaceType, validatorType);
 			}
 		}
 	}

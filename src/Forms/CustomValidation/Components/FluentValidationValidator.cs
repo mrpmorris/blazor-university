@@ -153,7 +153,8 @@ namespace CustomValidation.Components
 		{
 			foreach (ValidationFailure error in validationResult.Errors)
 			{
-				var fieldIdentifier = new FieldIdentifier(model, error.PropertyName);
+				object instance = error.CustomState ?? model;
+				var fieldIdentifier = new FieldIdentifier(instance, error.PropertyName);
 				ValidationMessageStore.Add(fieldIdentifier, error.ErrorMessage);
 			}
 		}
