@@ -1,6 +1,6 @@
+using CustomValidation.Validators;
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using CustomValidation.Components;
 
 namespace CustomValidation
 {
@@ -8,7 +8,7 @@ namespace CustomValidation
 	{
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddValidatorsInAssembly(typeof(Startup).Assembly);
+			services.AddScoped<PersonValidator>();
 		}
 
 		public void Configure(IComponentsApplicationBuilder app)

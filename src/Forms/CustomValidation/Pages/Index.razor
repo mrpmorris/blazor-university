@@ -2,7 +2,7 @@
 @using Models
 
 <EditForm Model=@Person>
-	<FluentValidationValidator />
+	<FluentValidationValidator ValidatorType=typeof(Validators.PersonValidator)/>
 	<p>Validation summary</p>
 	<ValidationSummary />
 	<p>Edit object</p>

@@ -18,12 +18,19 @@ namespace CustomValidation.Components
 		[CascadingParameter]
 		public EditContext EditContext { get; set; }
 
+		[Parameter]
+		public Type ValidatorType { get; set; }
+
 		// Keep a reference to our previous edit context,
 		// so when know if SetParametersAsync changes it
 		private EditContext PreviousEditContext;
 
-		// Holds a list of IValidator instances to perform our actual validation
-		private IEnumerable<IValidator> Validators;
+		// Keep a reference to our previous validator type
+		// so we know when to create a new validator instance
+		private Type PreviousValidatorType;
+
+		// Holds an instance to perform our actual validation
+		private IValidator Validator;
 
 		// This is where we register our validation errors for Blazor to pick up
 		// in the UI. Like EditContext, this instance should be discarded when
@@ -40,14 +47,36 @@ namespace CustomValidation.Components
 		/// EditForm.Model changing.
 		/// See http://blazor-university.com/components/component-lifecycles/ (component lifecycles).
 		/// </summary>
-		public async override Task SetParametersAsync(ParameterView parameters)
+		protected override void OnParametersSet()
 		{
-			await base.SetParametersAsync(parameters);
+			base.OnParametersSet();
+
+			if (EditContext == null)
+				throw new NullReferenceException($"{nameof(FluentValidationValidator)} must be placed within an {nameof(EditForm)}");
+
+			if (ValidatorType == null)
+				throw new NullReferenceException($"{nameof(ValidatorType)} must be specified.");
+
+			if (!typeof(IValidator).IsAssignableFrom(ValidatorType))
+				throw new ArgumentException($"{ValidatorType.Name} must implement {typeof(IValidator).FullName}");
+
+			if (ValidatorType != PreviousValidatorType)
+				ValidatorTypeChanged();
 
 			// If the EditForm.Model changes then we get a new EditContext
 			// and need to hook it up
 			if (EditContext != PreviousEditContext)
 				EditContextChanged();
+		}
+
+		private void ValidatorTypeChanged()
+		{
+			PreviousValidatorType = ValidatorType;
+			Validator = (IValidator)ServiceProvider.GetService(ValidatorType);
+			if (Validator != null)
+				System.Diagnostics.Debug.WriteLine("Not null");
+			else
+				System.Diagnostics.Debug.WriteLine("Is null");
 		}
 
 		/// <summary>
@@ -63,28 +92,8 @@ namespace CustomValidation.Components
 			// we also need to discard our old message store and create a new one
 			ValidationMessageStore = new ValidationMessageStore(EditContext);
 
-			// Get all Fluent IValidator instances for this EditForm.Model object type
-			CreateValidators();
-
-			// If there are any validators, then observe any changes to the EditForm.Model
-			// object
-			if (Validators.Any())
-				HookUpEditContextEvents();
-		}
-
-		/// <summary>
-		/// Gets a list of validator types for the EditForm.Model object type and
-		/// uses dependency injection to create instances of them. This implementation is
-		/// specific to our FluenValidation implementation, it's not Blazor specific.
-		/// </summary>
-		private void CreateValidators()
-		{
-			// Get a list of discovered validator types for the EditForm.Model type
-			IEnumerable<Type> validatorTypes = ValidatorRepository.GetValidators(EditContext.Model.GetType());
-
-			// Create instances of those validators
-			Validators = validatorTypes
-				.Select(x => (IValidator)ServiceProvider.GetService(x));
+			// Observe any changes to the EditForm.Model object
+			HookUpEditContextEvents();
 		}
 
 		private void HookUpEditContextEvents()
@@ -103,15 +112,12 @@ namespace CustomValidation.Components
 			// Clear all errors from a previous validation
 			ValidationMessageStore.Clear();
 
-			// Loop through all registered Fluent validators - this is usually zero or one
-			foreach (IValidator validator in Validators)
-			{
-				// Tell FluentValidation to validate the object
-				ValidationResult result = await validator.ValidateAsync(EditContext.Model);
 
-				// Now add the results to the ValidationMessageStore we created
-				AddValidationResult(EditContext.Model, result);
-			}
+			// Tell FluentValidation to validate the object
+			ValidationResult result = await Validator.ValidateAsync(EditContext.Model);
+
+			// Now add the results to the ValidationMessageStore we created
+			AddValidationResult(EditContext.Model, result);
 		}
 
 		async void FieldChanged(object sender, FieldChangedEventArgs args)
@@ -134,15 +140,12 @@ namespace CustomValidation.Components
 					validatorSelector: new FluentValidation.Internal.MemberNameValidatorSelector(propertiesToValidate)
 				);
 
-			// Loop through all registered Fluent validators - this is usually zero or one
-			foreach (IValidator validator in Validators)
-			{
-				// Tell FluentValidation to validate the specified property on the object that was edited
-				ValidationResult result = await validator.ValidateAsync(fluentValidationContext);
 
-				// Now add the results to the ValidationMessageStore we created
-				AddValidationResult(fieldIdentifier.Model, result);
-			}
+			// Tell FluentValidation to validate the specified property on the object that was edited
+			ValidationResult result = await Validator.ValidateAsync(fluentValidationContext);
+
+			// Now add the results to the ValidationMessageStore we created
+			AddValidationResult(fieldIdentifier.Model, result);
 		}
 
 		/// <summary>
@@ -153,11 +156,9 @@ namespace CustomValidation.Components
 		{
 			foreach (ValidationFailure error in validationResult.Errors)
 			{
-				object instance = error.CustomState ?? model;
-				var fieldIdentifier = new FieldIdentifier(instance, error.PropertyName);
+				var fieldIdentifier = new FieldIdentifier(model, error.PropertyName);
 				ValidationMessageStore.Add(fieldIdentifier, error.ErrorMessage);
 			}
 		}
-
 	}
 }
