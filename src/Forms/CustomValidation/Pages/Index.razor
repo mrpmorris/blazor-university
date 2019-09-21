@@ -1,0 +1,24 @@
+﻿@page "/"
+@using Models
+
+<EditForm Model=@Person>
+	<FluentValidationValidator />
+	<p>Validation summary</p>
+	<ValidationSummary />
+	<p>Edit object</p>
+	<div class="form-group">
+		<label for="Name">Name</label>
+		<InputText @bind-Value=Person.Name class="form-control" id="Name" />
+		<ValidationMessage For="() => Person.Name" />
+	</div>
+	<div class="form-group">
+		<label for="Age">Age</label>
+		<InputNumber @bind-Value=Person.Age class="form-control" id="Age" />
+		<ValidationMessage For=@(() => Person.Age) />
+	</div>
+	<input type="submit" class="btn btn-primary" value="Save" />
+</EditForm>
+
+@code {
+	Person Person = new Person();
+}
