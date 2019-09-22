@@ -14,7 +14,7 @@ namespace CustomValidation.Components
 		/// This changes whenever EditForm.Model changes
 		/// </summary>
 		[CascadingParameter]
-		public EditContext EditContext { get; set; }
+		private EditContext EditContext { get; set; }
 
 		[Parameter]
 		public Type ValidatorType { get; set; }

@@ -7,7 +7,7 @@ namespace HandlingFormSubmission.Components
 	public class PeteValidator : ComponentBase
 	{
 		[CascadingParameter]
-		public EditContext EditContext { get; set; }
+		private EditContext EditContext { get; set; }
 
 		private EditContext PreviousEditContext;
 
