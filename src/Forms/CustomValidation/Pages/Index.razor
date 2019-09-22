@@ -1,7 +1,7 @@
 ﻿@page "/"
 @using Models
 
-<EditForm Model=@Person>
+<EditForm Model=@Person OnValidSubmit=@ValidFormSubmitted OnInvalidSubmit=@InvalidFormSubmitted>
 	<FluentValidationValidator ValidatorType=typeof(Validators.PersonValidator)/>
 	<p>Validation summary</p>
 	<ValidationSummary />
@@ -21,4 +21,14 @@
 
 @code {
 	Person Person = new Person();
+
+	void ValidFormSubmitted()
+	{
+		Person = new Person();
+	}
+
+	void InvalidFormSubmitted()
+	{
+		System.Diagnostics.Debug.WriteLine("User submitted an invalid form");
+	}
 }

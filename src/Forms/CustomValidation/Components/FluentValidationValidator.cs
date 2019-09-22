@@ -2,9 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Components.Forms;
-using System.Collections.Generic;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CustomValidation.Components
@@ -20,14 +18,6 @@ namespace CustomValidation.Components
 
 		[Parameter]
 		public Type ValidatorType { get; set; }
-
-		// Keep a reference to our previous edit context,
-		// so when know if SetParametersAsync changes it
-		private EditContext PreviousEditContext;
-
-		// Keep a reference to our previous validator type
-		// so we know when to create a new validator instance
-		private Type PreviousValidatorType;
 
 		// Holds an instance to perform our actual validation
 		private IValidator Validator;
@@ -47,9 +37,13 @@ namespace CustomValidation.Components
 		/// EditForm.Model changing.
 		/// See http://blazor-university.com/components/component-lifecycles/ (component lifecycles).
 		/// </summary>
-		protected override void OnParametersSet()
+		public override async Task SetParametersAsync(ParameterView parameters)
 		{
-			base.OnParametersSet();
+			// Keep a reference to the original values so we can check if they have changed
+			EditContext previousEditContext = EditContext;
+			Type previousValidatorType = ValidatorType;
+
+			await base.SetParametersAsync(parameters);
 
 			if (EditContext == null)
 				throw new NullReferenceException($"{nameof(FluentValidationValidator)} must be placed within an {nameof(EditForm)}");
@@ -60,23 +54,21 @@ namespace CustomValidation.Components
 			if (!typeof(IValidator).IsAssignableFrom(ValidatorType))
 				throw new ArgumentException($"{ValidatorType.Name} must implement {typeof(IValidator).FullName}");
 
-			if (ValidatorType != PreviousValidatorType)
+			if (ValidatorType != previousValidatorType)
 				ValidatorTypeChanged();
 
 			// If the EditForm.Model changes then we get a new EditContext
 			// and need to hook it up
-			if (EditContext != PreviousEditContext)
+			if (EditContext != previousEditContext)
 				EditContextChanged();
 		}
 
+		/// <summary>
+		/// We create a new instance of the validator whenever ValidatorType changes.
+		/// </summary>
 		private void ValidatorTypeChanged()
 		{
-			PreviousValidatorType = ValidatorType;
 			Validator = (IValidator)ServiceProvider.GetService(ValidatorType);
-			if (Validator != null)
-				System.Diagnostics.Debug.WriteLine("Not null");
-			else
-				System.Diagnostics.Debug.WriteLine("Is null");
 		}
 
 		/// <summary>
@@ -85,12 +77,13 @@ namespace CustomValidation.Components
 		/// </summary>
 		void EditContextChanged()
 		{
-			PreviousEditContext = EditContext;
+			System.Diagnostics.Debug.WriteLine("EditContext has changed");
 
 			// We need this to store our validation errors
 			// Whenever we get a new EditContext (because EditForm.Model has changed)
 			// we also need to discard our old message store and create a new one
 			ValidationMessageStore = new ValidationMessageStore(EditContext);
+			System.Diagnostics.Debug.WriteLine("New ValidationMessageStore created");
 
 			// Observe any changes to the EditForm.Model object
 			HookUpEditContextEvents();
@@ -105,13 +98,16 @@ namespace CustomValidation.Components
 			// We need to know when to validate an individual property, this
 			// is triggered when the user edits something
 			EditContext.OnFieldChanged += FieldChanged;
+
+			System.Diagnostics.Debug.WriteLine("Hooked up EditContext events (OnValidationRequested and OnFieldChanged)");
 		}
 
 		async void ValidationRequested(object sender, ValidationRequestedEventArgs args)
 		{
+			System.Diagnostics.Debug.WriteLine("OnValidationRequested triggered: Validating whole object");
+
 			// Clear all errors from a previous validation
 			ValidationMessageStore.Clear();
-
 
 			// Tell FluentValidation to validate the object
 			ValidationResult result = await Validator.ValidateAsync(EditContext.Model);
@@ -122,6 +118,9 @@ namespace CustomValidation.Components
 
 		async void FieldChanged(object sender, FieldChangedEventArgs args)
 		{
+			System.Diagnostics.Debug.WriteLine($"OnFieldChanged triggered: Validating a single property named {args.FieldIdentifier.FieldName}" +
+				$" on class {args.FieldIdentifier.Model.GetType().Name}");
+
 			// Create a FieldIdentifier to identify which property
 			// of an an object has been modified
 			FieldIdentifier fieldIdentifier = args.FieldIdentifier;
@@ -139,7 +138,6 @@ namespace CustomValidation.Components
 					propertyChain: new FluentValidation.Internal.PropertyChain(),
 					validatorSelector: new FluentValidation.Internal.MemberNameValidatorSelector(propertiesToValidate)
 				);
-
 
 			// Tell FluentValidation to validate the specified property on the object that was edited
 			ValidationResult result = await Validator.ValidateAsync(fluentValidationContext);
@@ -159,6 +157,7 @@ namespace CustomValidation.Components
 				var fieldIdentifier = new FieldIdentifier(model, error.PropertyName);
 				ValidationMessageStore.Add(fieldIdentifier, error.ErrorMessage);
 			}
+			EditContext.NotifyValidationStateChanged();
 		}
 	}
 }
