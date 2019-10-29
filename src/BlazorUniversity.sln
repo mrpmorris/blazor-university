@@ -89,7 +89,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScriptInterop", "JavaSc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallingJavaScriptFromBlazor", "JavaScriptInterop\CallingJavaScriptFromBlazor\CallingJavaScriptFromBlazor.csproj", "{D7169977-FEEE-4CDC-93A9-81DA49C4BF68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassingComplexObjectsToJavaScript", "JavaScriptInterop\PassingComplexObjectsToJavaScript\PassingComplexObjectsToJavaScript.csproj", "{F786B477-38FC-478D-999B-E70BC05BE07B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassingComplexObjectsToJavaScript", "JavaScriptInterop\PassingComplexObjectsToJavaScript\PassingComplexObjectsToJavaScript.csproj", "{F786B477-38FC-478D-999B-E70BC05BE07B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessingJavaScriptReturnValues", "JavaScriptInterop\AccessingJavaScriptReturnValues\AccessingJavaScriptReturnValues.csproj", "{93835A19-7AB3-4CF0-A93C-F866107CDE1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -237,6 +239,10 @@ Global
 		{F786B477-38FC-478D-999B-E70BC05BE07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F786B477-38FC-478D-999B-E70BC05BE07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F786B477-38FC-478D-999B-E70BC05BE07B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93835A19-7AB3-4CF0-A93C-F866107CDE1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93835A19-7AB3-4CF0-A93C-F866107CDE1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93835A19-7AB3-4CF0-A93C-F866107CDE1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93835A19-7AB3-4CF0-A93C-F866107CDE1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -277,6 +283,7 @@ Global
 		{D6851085-D8CC-44CB-B2C2-EA925CF0AB86} = {2D994367-A93E-4900-B41B-F5543F399973}
 		{D7169977-FEEE-4CDC-93A9-81DA49C4BF68} = {BE6BDDE7-E299-4EE4-8386-07C485345B4C}
 		{F786B477-38FC-478D-999B-E70BC05BE07B} = {BE6BDDE7-E299-4EE4-8386-07C485345B4C}
+		{93835A19-7AB3-4CF0-A93C-F866107CDE1C} = {BE6BDDE7-E299-4EE4-8386-07C485345B4C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
