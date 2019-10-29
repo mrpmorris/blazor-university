@@ -1,0 +1,12 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+
+<button @onclick=ButtonClicked>Perform interop</button>
+
+@code
+{
+	 private async Task ButtonClicked()
+	 {
+		 await JSRuntime.InvokeVoidAsync("alert", "Hello world");
+	 }
+}
