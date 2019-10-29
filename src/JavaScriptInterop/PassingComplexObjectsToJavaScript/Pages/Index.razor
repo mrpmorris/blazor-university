@@ -1,0 +1,21 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+
+<button @onclick=ButtonClicked>Perform interop</button>
+
+@code
+{
+	private async Task ButtonClicked()
+	{
+		var person = new Models.Person
+		{
+			Salutation = "Mr",
+			GivenName = "Chuck",
+			FamilyName = "Morris"
+		};
+		person.PhoneNumbers.Add(new KeyValuePair<string, string>("Home", "+44 (0)121 999 9999"));
+		person.PhoneNumbers.Add(new KeyValuePair<string, string>("Work", "+44 (0)161 999 9999"));
+
+		await JSRuntime.InvokeVoidAsync("console.log", "Hello", person);
+	}
+}
