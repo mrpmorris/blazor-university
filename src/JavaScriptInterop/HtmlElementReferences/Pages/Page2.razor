@@ -1,0 +1,8 @@
+﻿@page "/page-2"
+Enter your name
+<input @ref=ReferenceToInputControl />
+<AutoFocus GetControl=@( () => ReferenceToInputControl)/>
+
+@code {
+  ElementReference ReferenceToInputControl;
+}

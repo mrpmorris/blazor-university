@@ -1,0 +1,14 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+Enter your name
+<input @ref=ReferenceToInputControl />
+
+@code
+{
+	ElementReference ReferenceToInputControl;
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+			await JSRuntime.InvokeVoidAsync("BlazorUniversity.setFocus", ReferenceToInputControl);
+	}
+}

@@ -1,0 +1,14 @@
+﻿@inject IJSRuntime JSRuntime
+@code {
+	[Parameter]
+	public Func<ElementReference> GetControl { get; set; }
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (GetControl is null)
+			throw new ArgumentNullException(nameof(GetControl));
+
+		if (firstRender)
+			await JSRuntime.InvokeVoidAsync("BlazorUniversity.setFocus", GetControl());
+	}
+}
