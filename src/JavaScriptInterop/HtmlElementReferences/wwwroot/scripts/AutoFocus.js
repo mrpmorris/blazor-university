@@ -3,4 +3,4 @@
 	setFocus: function (element) {
 		element.focus();
 	}
-}
+};
