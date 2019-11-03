@@ -1,6 +1,4 @@
-﻿window.BlazorUniversity = {
-	...window.BlazorUniversity,
-	setFocus: function (element) {
-		element.focus();
-	}
+﻿var BlazorUniversity = BlazorUniversity || {};
+BlazorUniversity.setFocus = function (element) {
+	element.focus();
 };

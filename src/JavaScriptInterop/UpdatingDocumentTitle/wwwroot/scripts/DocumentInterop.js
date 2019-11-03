@@ -1,7 +1,4 @@
-﻿window.BlazorUniversity =
-	{
-		...window.BlazorUniversity,
-		setDocumentTitle: function (title) {
-			document.title = title;
-		}
-	};
+﻿var BlazorUniversity = BlazorUniversity || {};
+BlazorUniversity.setDocumentTitle = function (title) {
+	document.title = title;
+};
