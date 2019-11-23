@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject IJSRuntime JSRuntime
+@implements IDisposable
 
 <h1>Text received</h1>
 <ul>
@@ -12,11 +13,13 @@
 @code
 {
 	List<string> TextHistory = new List<string>();
+	DotNetObjectReference<Index> ObjectReference;
 
 	protected override void OnInitialized()
 	{
 		base.OnInitialized();
-		JSRuntime.InvokeVoidAsync("BlazorUniversity.startRandomGenerator", DotNetObjectReference.Create(this));
+		ObjectReference = DotNetObjectReference.Create(this);
+		JSRuntime.InvokeVoidAsync("BlazorUniversity.startRandomGenerator", ObjectReference);
 	}
 
 	[JSInvokable("AddText")]
@@ -27,5 +30,10 @@
 			TextHistory.RemoveAt(0);
 		StateHasChanged();
 		System.Diagnostics.Debug.WriteLine("DotNet: Received " + text);
+	}
+
+	void IDisposable.Dispose()
+	{
+		ObjectReference.Dispose();
 	}
 }

@@ -101,6 +101,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallingDotNetFromJavaScript
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallingDotNetFromJavaScriptBasic", "JavaScriptInterop\CallingDotNetFromJavaScriptBasic\CallingDotNetFromJavaScriptBasic.csproj", "{00D08B21-4F6E-43AC-9F56-F71295B35091}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallingDotNetFromJavaScriptLifetimes", "JavaScriptInterop\CallingDotNetFromJavaScriptLifetimes\CallingDotNetFromJavaScriptLifetimes.csproj", "{E8EBC2E9-6D2B-43D2-929A-3954CF12EDC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -267,6 +269,10 @@ Global
 		{00D08B21-4F6E-43AC-9F56-F71295B35091}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00D08B21-4F6E-43AC-9F56-F71295B35091}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00D08B21-4F6E-43AC-9F56-F71295B35091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8EBC2E9-6D2B-43D2-929A-3954CF12EDC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8EBC2E9-6D2B-43D2-929A-3954CF12EDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8EBC2E9-6D2B-43D2-929A-3954CF12EDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8EBC2E9-6D2B-43D2-929A-3954CF12EDC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -312,6 +318,7 @@ Global
 		{C5F218B1-C47B-476D-B306-E0608F65D805} = {BE6BDDE7-E299-4EE4-8386-07C485345B4C}
 		{B8C6A78E-7F20-4FC1-B6C9-5635F91106F2} = {BE6BDDE7-E299-4EE4-8386-07C485345B4C}
 		{00D08B21-4F6E-43AC-9F56-F71295B35091} = {BE6BDDE7-E299-4EE4-8386-07C485345B4C}
+		{E8EBC2E9-6D2B-43D2-929A-3954CF12EDC3} = {BE6BDDE7-E299-4EE4-8386-07C485345B4C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
