@@ -1,15 +1,20 @@
 ﻿@page "/"
 
-<FadeIn Duration=1>
+<FadeIn Duration=3 AnimationStarted=HeaderAnimationStarted AnimationEnded=HeaderAnimationEnded>
 	<h1>Hello, world!</h1>
+	Status: @Status
 </FadeIn>
 
-<FadeIn Duration=2>
-	Welcome to your new app.
-</FadeIn>
+@code {
+	string Status;
 
-<FadeIn Duration=3>
-	<p>
-		The text here will fade in over a duration of 3 seconds, refresh the page if you missed it!
-	</p>
-</FadeIn>
+	private void HeaderAnimationStarted(string animationName)
+	{
+		Status = "Started animation: " + animationName;
+	}
+
+	private void HeaderAnimationEnded(string animationName)
+	{
+		Status = "Ended animation: " + animationName;
+	}
+}

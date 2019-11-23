@@ -1,7 +1,7 @@
 ﻿var BlazorUniversity = BlazorUniversity || {};
 BlazorUniversity.animate = function (htmlElement, animationName, duration, dotNetObject) {
     let animationStartCallback = () => {
-        dotNetObject.invokeMethodAsync('AnimationStarted', animationName);
+        dotNetObject.invokeMethodAsync('NotifyAnimationStarted', animationName);
     }
 
     let animationEndCallback = () => {
@@ -13,7 +13,7 @@ BlazorUniversity.animate = function (htmlElement, animationName, duration, dotNe
         htmlElement.removeEventListener('animationstart', animationStartCallback);
         htmlElement.removeEventListener('animationend', animationEndCallback);
 
-        dotNetObject.invokeMethodAsync('AnimationEnded', animationName);
+        dotNetObject.invokeMethodAsync('NotifyAnimationEnded', animationName);
     }
 
     // Code for Chrome, Safari and Opera

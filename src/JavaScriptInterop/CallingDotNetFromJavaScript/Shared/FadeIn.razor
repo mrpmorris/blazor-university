@@ -1,46 +1,50 @@
 ﻿@inject IJSRuntime JSRuntime
 @if (IsFading)
 {
-    <div @ref=WrapperElement>
-        <div style="visibility : @( HasStarted ? "visible" : "hidden")">
-            @ChildContent
-        </div>
-    </div>
+	<div @ref=WrapperElement>
+		<div style="visibility : @( HasStarted ? "visible" : "hidden")">
+			@ChildContent
+		</div>
+	</div>
 }
 else
 {
-    @ChildContent
+	@ChildContent
 }
 @code
 {
-    [Parameter] public RenderFragment ChildContent { get; set; }
-    [Parameter] public float Duration { get; set; } = 0.5f;
+  [Parameter] public RenderFragment ChildContent { get; set; }
+  [Parameter] public float Duration { get; set; } = 0.5f;
+  [Parameter] public EventCallback<string> AnimationStarted { get; set; }
+  [Parameter] public EventCallback<string> AnimationEnded { get; set; }
 
-    bool HasStarted;
-    bool IsFading = true;
-    ElementReference WrapperElement;
+  bool HasStarted;
+  bool IsFading = true;
+  ElementReference WrapperElement;
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        base.OnAfterRender(firstRender);
-        if (firstRender)
-        {
-            var thisReference = DotNetObjectReference.Create(this);
-            await JSRuntime.InvokeVoidAsync("BlazorUniversity.animate", WrapperElement, "fade-in", Duration, thisReference);
-        }
-    }
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+	  base.OnAfterRender(firstRender);
+	  if (firstRender)
+	  {
+		  var thisReference = DotNetObjectReference.Create(this);
+		  await JSRuntime.InvokeVoidAsync("BlazorUniversity.animate", WrapperElement, "fade-in", Duration, thisReference);
+	  }
+  }
 
-    [JSInvokable("AnimationStarted")]
-    public void AnimationStarted(string animationName)
-    {
-        HasStarted = true;
-        InvokeAsync(StateHasChanged);
-    }
+  [JSInvokable("NotifyAnimationStarted")]
+  public void NotifyAnimationStarted(string animationName)
+  {
+	  HasStarted = true;
+	  StateHasChanged();
+      AnimationStarted.InvokeAsync(animationName);
+  }
 
-    [JSInvokable("AnimationEnded")]
-    public void AnimationEnded(string animationName)
-    {
-        IsFading = false;
-        InvokeAsync(StateHasChanged);
-    }
+  [JSInvokable("NotifyAnimationEnded")]
+  public void NotifyAnimationEnded(string animationName)
+  {
+	  IsFading = false;
+	  StateHasChanged();
+      AnimationEnded.InvokeAsync(animationName);
+  }
 }
