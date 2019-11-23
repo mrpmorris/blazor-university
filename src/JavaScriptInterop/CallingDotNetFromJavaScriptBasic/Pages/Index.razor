@@ -1,0 +1,30 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+
+<h1>Text received</h1>
+<ul>
+	@foreach (string text in TextHistory)
+	{
+		<li>@text</li>
+	}
+</ul>
+
+@code
+{
+	List<string> TextHistory = new List<string>();
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		JSRuntime.InvokeVoidAsync("BlazorUniversity.startRandomGenerator", DotNetObjectReference.Create(this));
+	}
+
+	[JSInvokable("AddText")]
+	public void AddTextToTextHistory(string text)
+	{
+		TextHistory.Add(text.ToString());
+		while (TextHistory.Count > 10)
+			TextHistory.RemoveAt(0);
+		StateHasChanged();
+	}
+}
