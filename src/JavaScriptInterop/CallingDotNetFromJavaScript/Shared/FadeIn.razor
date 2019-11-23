@@ -50,11 +50,6 @@ else
 		AnimationEnded.InvokeAsync(animationName);
 	}
 
-	~FadeIn()
-	{
-		((IDisposable)this).Dispose();
-	}
-
 	void IDisposable.Dispose()
 	{
 		if (ObjectReference != null)

@@ -36,11 +36,6 @@
 		System.Diagnostics.Debug.WriteLine("DotNet: Received " + text);
 	}
 
-	~Index()
-	{
-		Dispose();
-	}
-
 	public async void Dispose()
 	{
 		GC.SuppressFinalize(this);
