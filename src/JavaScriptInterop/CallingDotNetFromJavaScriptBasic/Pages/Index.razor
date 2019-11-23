@@ -13,10 +13,14 @@
 {
 	List<string> TextHistory = new List<string>();
 
-	protected override void OnInitialized()
+	protected override void OnAfterRender(bool firstRender)
 	{
-		base.OnInitialized();
-		JSRuntime.InvokeVoidAsync("BlazorUniversity.startRandomGenerator", DotNetObjectReference.Create(this));
+		base.OnAfterRender(firstRender);
+		if (firstRender)
+		{
+			var dotNetReference = DotNetObjectReference.Create(this);
+			JSRuntime.InvokeVoidAsync("BlazorUniversity.startRandomGenerator", dotNetReference);
+		}
 	}
 
 	[JSInvokable("AddText")]

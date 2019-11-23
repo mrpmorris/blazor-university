@@ -13,13 +13,17 @@
 @code
 {
 	List<string> TextHistory = new List<string>();
+	int GeneratorHandle = -1;
 	DotNetObjectReference<Index> ObjectReference;
 
-	protected override void OnInitialized()
+	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
-		base.OnInitialized();
-		ObjectReference = DotNetObjectReference.Create(this);
-		JSRuntime.InvokeVoidAsync("BlazorUniversity.startRandomGenerator", ObjectReference);
+		await base.OnAfterRenderAsync(firstRender);
+		if (firstRender)
+		{
+			ObjectReference = DotNetObjectReference.Create(this);
+			GeneratorHandle = await JSRuntime.InvokeAsync<int>("BlazorUniversity.startRandomGenerator", ObjectReference);
+		}
 	}
 
 	[JSInvokable("AddText")]
@@ -32,8 +36,24 @@
 		System.Diagnostics.Debug.WriteLine("DotNet: Received " + text);
 	}
 
-	void IDisposable.Dispose()
+	~Index()
 	{
-		ObjectReference.Dispose();
+		Dispose();
+	}
+
+	public async void Dispose()
+	{
+		GC.SuppressFinalize(this);
+
+		if (GeneratorHandle != -1)
+		{
+			//Cancel our callback before disposing our object reference
+			await JSRuntime.InvokeVoidAsync("BlazorUniversity.stopRandomGenerator", GeneratorHandle);
+		}
+		if (ObjectReference != null)
+		{
+			//Now dispose our object reference so our component can be garbage collected
+			ObjectReference.Dispose();
+		}
 	}
 }
