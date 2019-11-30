@@ -16,3 +16,10 @@ setTimeout(async function () {
 //	}
 //}
 //window.someInitialization();
+
+// Use Blazor.start - Don't forget to set autostart="false" in /Pages/_Host.cshtml
+//Blazor.start({})
+//	.then(async function () {
+//		const settings = await DotNet.invokeMethodAsync("CallingStaticDotNetMethods", "GetSettings");
+//		alert('API key: ' + settings.someApiKey);
+//	});
