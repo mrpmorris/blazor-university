@@ -2,6 +2,6 @@
 {
 	public class JavaScriptSettings
 	{
-		public string SomeAPiKey { get; set; }
+		public string SomeApiKey { get; set; }
 	}
 }
