@@ -1,21 +1,17 @@
 ﻿@page "/counter"
 
-<div>
-    CurrentCounterValue in MyFirstComponent is @CurrentCounterValue
-</div>
+<h1>Counter</h1>
 
-<button class="btn btn-primary" @onclick=UpdateCurrentCounterValue>Update</button>
+<p>Current count: @currentCount</p>
+<MySecondComponent CurrentCounterValue=@currentCount/>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-    [Parameter]
-    public int CurrentCounterValue { get; set; }
+	private int currentCount = 0;
 
-    [Parameter]
-    public EventCallback<int> CurrentCounterValueChanged { get; set; }
-
-    async Task UpdateCurrentCounterValue()
-    {
-        CurrentCounterValue++;
-        await CurrentCounterValueChanged.InvokeAsync(CurrentCounterValue);
-    }
+	private void IncrementCount()
+	{
+		currentCount++;
+	}
 }
