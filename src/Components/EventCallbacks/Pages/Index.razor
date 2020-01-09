@@ -1,0 +1,14 @@
+﻿@page "/"
+
+Last multiple of three = @LastMultipleOfThree
+
+<Counter OnMultipleOfThree=MultipleOfThree/>
+
+@code
+{
+  int LastMultipleOfThree = 0;
+  private void MultipleOfThree(int value)
+  {
+      LastMultipleOfThree = value;
+  }
+}

@@ -105,6 +105,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallingStaticDotNetMethods"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaScriptBootProcess", "JavaScriptInterop\JavaScriptBootProcess\JavaScriptBootProcess.csproj", "{D0CA99E6-27D6-4992-AABD-FC5DAFD13C23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCallbacks", "Components\EventCallbacks\EventCallbacks.csproj", "{6656E9D9-DD40-44E8-9DF1-F6516EFAAF19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -279,6 +281,10 @@ Global
 		{D0CA99E6-27D6-4992-AABD-FC5DAFD13C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0CA99E6-27D6-4992-AABD-FC5DAFD13C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0CA99E6-27D6-4992-AABD-FC5DAFD13C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6656E9D9-DD40-44E8-9DF1-F6516EFAAF19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6656E9D9-DD40-44E8-9DF1-F6516EFAAF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6656E9D9-DD40-44E8-9DF1-F6516EFAAF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6656E9D9-DD40-44E8-9DF1-F6516EFAAF19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -326,6 +332,7 @@ Global
 		{E8EBC2E9-6D2B-43D2-929A-3954CF12EDC3} = {BE6BDDE7-E299-4EE4-8386-07C485345B4C}
 		{6D93568C-1D0B-43C6-BF71-1804A4492F99} = {BE6BDDE7-E299-4EE4-8386-07C485345B4C}
 		{D0CA99E6-27D6-4992-AABD-FC5DAFD13C23} = {BE6BDDE7-E299-4EE4-8386-07C485345B4C}
+		{6656E9D9-DD40-44E8-9DF1-F6516EFAAF19} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
