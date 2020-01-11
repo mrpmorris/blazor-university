@@ -2,12 +2,13 @@
 
 Last multiple of three = @LastMultipleOfThree
 
-<Counter OnMultipleOfThree=MultipleOfThree/>
+<Counter OnMultipleOfThree=@UpdateLastMultipleOfThreeValue/>
 
 @code
 {
   int LastMultipleOfThree = 0;
-  private void MultipleOfThree(int value)
+
+  private void UpdateLastMultipleOfThreeValue(int value)
   {
       LastMultipleOfThree = value;
   }
