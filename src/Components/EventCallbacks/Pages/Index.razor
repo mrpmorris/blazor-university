@@ -8,8 +8,9 @@ Last multiple of three = @LastMultipleOfThree
 {
   int LastMultipleOfThree = 0;
 
-  private void UpdateLastMultipleOfThreeValue(int value)
+  private Task UpdateLastMultipleOfThreeValue(int value)
   {
       LastMultipleOfThree = value;
+      return Task.CompletedTask;
   }
 }
