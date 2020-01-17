@@ -1,16 +1,25 @@
 ﻿@page "/"
 
-Last multiple of three = @LastMultipleOfThree
+<ul>
+	<li>Last multiple of two = @LastMultipleOfTwo</li>
+	<li>Last multiple of four = @LastMultipleOfThree</li>
+</ul>
 
-<Counter OnMultipleOfThree=@UpdateLastMultipleOfThreeValue/>
+
+<Counter OnMultipleOfThree=@UpdateLastMultipleOfThreeValue OnMultipleOfTwoAction=@UpdateLastMultipleOfTwoValue />
 
 @code
 {
-  int LastMultipleOfThree = 0;
+	int LastMultipleOfTwo = 0;
+	int LastMultipleOfThree = 0;
 
-  private Task UpdateLastMultipleOfThreeValue(int value)
-  {
-      LastMultipleOfThree = value;
-      return Task.CompletedTask;
-  }
+	private void UpdateLastMultipleOfTwoValue(int value)
+	{
+		LastMultipleOfTwo = value;
+	}
+
+	private void UpdateLastMultipleOfThreeValue(int value)
+	{
+		LastMultipleOfThree = value;
+	}
 }
