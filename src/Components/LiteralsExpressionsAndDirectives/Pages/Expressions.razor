@@ -1,0 +1,58 @@
+﻿@page "/expressions"
+<h3>Expressions</h3>
+
+<table class="table">
+	<tr class="bg-dark">
+		<td colspan="2">
+			<button @onclick=IncreaseInputSize>Increase size</button>
+		</td>
+	</tr>
+	<tr>
+		<td>&lt;input width=@@InputSize /&gt;</td>
+		<td><input size=@InputSize value=@($"Size is {InputSize}") /></td>
+	</tr>
+	<tr>
+		<td>&lt;input width=@@DoubleInputSize() /&gt;</td>
+		<td><input size=@DoubleInputSize() value=@($"Size is {DoubleInputSize()}") /></td>
+	</tr>
+	<tr class="bg-dark">
+		<td colspan="2">
+			<button @onclick=AlterHeaderText>Alter header text</button>
+			<button @onclick=ToggleHeaderVisible>Toggle header visible</button>
+		</td>
+	</tr>
+	<tr>
+		<td>&lt;MyHeader Text=@@HeaderText Visible=@@HeaderVisible /&gt;</td>
+		<td>
+			<MyHeader Text=@HeaderText Visible=@HeaderVisible />
+		</td>
+	</tr>
+</table>
+
+@code
+{
+  int InputSize = 8;
+  bool HeaderVisible = true;
+  string HeaderText = "Hello";
+
+  private int DoubleInputSize()
+  {
+	  return InputSize * 2;
+  }
+
+  private void IncreaseInputSize()
+  {
+	  InputSize++;
+  }
+
+  private void AlterHeaderText()
+  {
+	  HeaderText += "!";
+  }
+
+  private void ToggleHeaderVisible()
+  {
+	  HeaderVisible = !HeaderVisible;
+  }
+}
+
