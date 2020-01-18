@@ -13,9 +13,21 @@
 			</NavLink>
 		</li>
 		<li class="nav-item px-3">
-			<NavLink class="nav-link" href="/expressions" Match="NavLinkMatch.All">
+			<NavLink class="nav-link" href="/expressions/" Match="NavLinkMatch.Prefix">
 				<span class="oi oi-calculator" aria-hidden="true"></span>Expressions
 			</NavLink>
+			<ul class="nav flex-column">
+				<li class="nav-item px-3">
+					<NavLink class="nav-link" href="/expressions" Match="NavLinkMatch.All">
+						<span class="oi oi-calculator" aria-hidden="true"></span>Simple
+					</NavLink>
+				</li>
+				<li class="nav-item px-3">
+					<NavLink class="nav-link" href="/expressions/objects" Match="NavLinkMatch.All">
+						<span class="oi oi-calculator" aria-hidden="true"></span>Objects
+					</NavLink>
+				</li>
+			</ul>
 		</li>
 		<li class="nav-item px-3">
 			<NavLink class="nav-link" href="/directives" Match="NavLinkMatch.All">
