@@ -1,0 +1,16 @@
+﻿<div class="row">
+	<div class="col-2">Salutation</div>
+	<div class="col-10">@Person?.Salutation</div>
+</div>
+<div class="row">
+	<div class="col-2">Given name</div>
+	<div class="col-10">@Person?.GivenName</div>
+</div><div class="row">
+	<div class="col-2">Family name</div>
+	<div class="col-10">@Person?.FamilyName</div>
+</div>
+@code
+{
+  [Parameter]
+  public Person Person { get; set; }
+}
