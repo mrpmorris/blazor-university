@@ -1,0 +1,31 @@
+﻿@page "/"
+@using System.Diagnostics
+
+<div @onclick=TopLevelClicked>
+	<h1>Top level</h1>
+	<div @onclick=SecondLevelClicked @onclick:stopPropagation>
+		<h2>Second level</h2>
+		<div @onclick=ThirdLevelClicked>
+			<h3>Third level</h3>
+		</div>
+	</div>
+</div>
+
+@code
+{
+	private void TopLevelClicked()
+	{
+		System.Diagnostics.Debug.WriteLine("Top level clicked");
+	}
+
+	private void SecondLevelClicked()
+	{
+		System.Diagnostics.Debug.WriteLine("Second level clicked");
+	}
+
+	private void ThirdLevelClicked()
+	{
+		System.Diagnostics.Debug.WriteLine("Third level clicked");
+	}
+
+}
