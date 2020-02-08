@@ -1,0 +1,36 @@
+﻿@page "/"
+
+<h3>Standard two-way binding</h3>
+<div class="form-group">
+	<label>Name = @OurModel.Name</label>
+	<input @bind-value=OurModel.Name class="form-control" />
+	<p>Binding occurs when leaving the input, or when Enter is pressed</p>
+</div>
+
+<h3>Two-way binding with bind:event</h3>
+<div class="form-group">
+	<label>Name = @OurModel.Name</label>
+	<input @bind-value=OurModel.Name @bind-value:event="oninput" class="form-control" />
+	<p>Binding occurs whenever the value in the input changes</p>
+</div>
+
+<h3>Two-way binding with format</h3>
+<div class="form-group">
+	<label>Date of birth = @OurModel.DateOfBirth?.ToString("MMMM d, yyyy")</label>
+	<input @bind-value=OurModel.DateOfBirth @bind-value:format="yyyy-MM-dd" class="form-control" />
+	<p>Binding using the format yyyy-MM-dd</p>
+</div>
+
+<h3>Two-way binding with Spanish culture</h3>
+<div class="form-group">
+	<label>Bank balance = @OurModel.BankBalance</label>
+	<input @bind-value=OurModel.BankBalance @bind-value:culture=Spanish class="form-control" />
+	<p>Spain uses a comma as a decimal separator</p>
+</div>
+
+
+@code
+{
+	private ModelClass OurModel = new ModelClass();
+	private System.Globalization.CultureInfo Spanish = System.Globalization.CultureInfo.GetCultureInfo("es");
+}
