@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using System.Globalization 
 
 <h3>Standard two-way binding</h3>
 <div class="form-group">
@@ -21,19 +22,19 @@
 	<p>Binding using the format yyyy-MM-dd</p>
 </div>
 
-<h3>Two-way binding with Spanish culture</h3>
+<h3>Two-way binding with Turkish culture</h3>
 <div class="form-group">
 	<label>Bank balance = @BankBalance</label>
-	<input @bind-value=BankBalance @bind-value:culture=Spanish class="form-control" />
-	<p>Spain uses a comma as a decimal separator</p>
+	<input @bind-value=BankBalance @bind-value:culture=Turkish class="form-control" />
+	<p>Turkey uses . to group digits and , to indicate decimals</p>
 </div>
 
 
 @code
 {
-  private string Name;
-  private DateTime? DateOfBirth;
-  private decimal? BankBalance;
+	private string Name;
+	private DateTime? DateOfBirth;
+	private decimal? BankBalance;
 
-  private System.Globalization.CultureInfo Spanish = System.Globalization.CultureInfo.GetCultureInfo("es");
+	private CultureInfo Turkish = CultureInfo.GetCultureInfo("tr-TR");
 }
