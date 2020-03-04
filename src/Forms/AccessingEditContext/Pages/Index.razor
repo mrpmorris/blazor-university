@@ -1,0 +1,36 @@
+﻿@page "/"
+
+<p>
+	Press the <em>Save</em> button and compare the appearance of the two email inputs.
+</p>
+
+<EditForm Model=@MyContact Context="CurrentEditContext">
+	<DataAnnotationsValidator />
+
+	<div class="form-group">
+		<label for="EmailAddress">Email address</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text">@@</span>
+			</div>
+			<InputText @bind-Value=MyContact.EmailAddress id="EmailAddress" class="form-control" type="email" />
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="EmailAddress">Email address</label>
+		<div class="input-group @CurrentEditContext.FieldCssClass( () => MyContact.EmailAddress)">
+			<div class="input-group-prepend">
+				<span class="input-group-text">@@</span>
+			</div>
+			<InputText @bind-Value=MyContact.EmailAddress id="EmailAddress" class="form-control" type="email" />
+		</div>
+	</div>
+
+	<button type="submit">Save</button>
+</EditForm>
+
+@code
+{
+	Contact MyContact = new Contact();
+}
