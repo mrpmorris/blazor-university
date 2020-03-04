@@ -113,7 +113,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectiveAttributes", "Comp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BindingDirectives", "Components\BindingDirectives\BindingDirectives.csproj", "{6FA3167A-4E3F-47A9-9BD8-BABB0A48A910}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessingEditContext", "Forms\AccessingEditContext\AccessingEditContext.csproj", "{FE763B7D-4C34-4641-8BA5-0E789AD79DF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessingFormState", "Forms\AccessingFormState\AccessingFormState.csproj", "{43B98061-28E7-4879-B2DC-8E82CF54538A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -305,10 +305,10 @@ Global
 		{6FA3167A-4E3F-47A9-9BD8-BABB0A48A910}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FA3167A-4E3F-47A9-9BD8-BABB0A48A910}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FA3167A-4E3F-47A9-9BD8-BABB0A48A910}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE763B7D-4C34-4641-8BA5-0E789AD79DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE763B7D-4C34-4641-8BA5-0E789AD79DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE763B7D-4C34-4641-8BA5-0E789AD79DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE763B7D-4C34-4641-8BA5-0E789AD79DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B98061-28E7-4879-B2DC-8E82CF54538A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B98061-28E7-4879-B2DC-8E82CF54538A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B98061-28E7-4879-B2DC-8E82CF54538A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B98061-28E7-4879-B2DC-8E82CF54538A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -360,7 +360,7 @@ Global
 		{2D48F414-14FC-44DD-9B70-F3C19AF39903} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
 		{030C5EB9-1924-4D66-9C27-9C3A71BCF504} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
 		{6FA3167A-4E3F-47A9-9BD8-BABB0A48A910} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
-		{FE763B7D-4C34-4641-8BA5-0E789AD79DF8} = {2D994367-A93E-4900-B41B-F5543F399973}
+		{43B98061-28E7-4879-B2DC-8E82CF54538A} = {2D994367-A93E-4900-B41B-F5543F399973}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
