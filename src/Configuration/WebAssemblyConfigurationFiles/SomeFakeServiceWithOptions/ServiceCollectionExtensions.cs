@@ -11,12 +11,12 @@ namespace WebAssemblyConfigurationFiles
 			options(optionsInstance);
 
 			if (string.IsNullOrEmpty(optionsInstance.Url))
-				throw new NullReferenceException(nameof(Options.Url));
+				throw new NullReferenceException(nameof(optionsInstance.Url));
 			if (string.IsNullOrEmpty(optionsInstance.AccessToken))
-				throw new NullReferenceException(nameof(Options.AccessToken));
+				throw new NullReferenceException(nameof(optionsInstance.AccessToken));
 
-			System.Diagnostics.Debug.WriteLine("URL " + settings.Url);
-			System.Diagnostics.Debug.WriteLine("AccessToken " + settings.AccessToken);
+			System.Diagnostics.Debug.WriteLine("URL " + optionsInstance.Url);
+			System.Diagnostics.Debug.WriteLine("AccessToken " + optionsInstance.AccessToken);
 
 			return services;
 		}
