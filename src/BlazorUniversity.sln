@@ -115,6 +115,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BindingDirectives", "Compon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessingFormState", "Forms\AccessingFormState\AccessingFormState.csproj", "{43B98061-28E7-4879-B2DC-8E82CF54538A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{64274D04-6B29-4B68-ACDA-0F51606012A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAssemblyConfigurationFiles", "Configuration\WebAssemblyConfigurationFiles\WebAssemblyConfigurationFiles.csproj", "{93966EB7-536D-472E-8E94-92EC569014AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -309,6 +313,10 @@ Global
 		{43B98061-28E7-4879-B2DC-8E82CF54538A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43B98061-28E7-4879-B2DC-8E82CF54538A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43B98061-28E7-4879-B2DC-8E82CF54538A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93966EB7-536D-472E-8E94-92EC569014AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93966EB7-536D-472E-8E94-92EC569014AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93966EB7-536D-472E-8E94-92EC569014AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93966EB7-536D-472E-8E94-92EC569014AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -361,6 +369,7 @@ Global
 		{030C5EB9-1924-4D66-9C27-9C3A71BCF504} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
 		{6FA3167A-4E3F-47A9-9BD8-BABB0A48A910} = {D3157A64-22C7-45D8-A02E-B22ED4282932}
 		{43B98061-28E7-4879-B2DC-8E82CF54538A} = {2D994367-A93E-4900-B41B-F5543F399973}
+		{93966EB7-536D-472E-8E94-92EC569014AE} = {64274D04-6B29-4B68-ACDA-0F51606012A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
