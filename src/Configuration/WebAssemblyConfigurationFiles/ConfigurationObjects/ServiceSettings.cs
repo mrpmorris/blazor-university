@@ -1,4 +1,4 @@
-﻿namespace WebAssemblyConfigurationFiles.ConfigurationObjects
+﻿namespace WebAssemblyEmbeddedConfigurationFiles.ConfigurationObjects
 {
 	public class ServiceSettings
 	{

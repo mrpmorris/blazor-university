@@ -117,7 +117,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccessingFormState", "Forms
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{64274D04-6B29-4B68-ACDA-0F51606012A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAssemblyConfigurationFiles", "Configuration\WebAssemblyConfigurationFiles\WebAssemblyConfigurationFiles.csproj", "{93966EB7-536D-472E-8E94-92EC569014AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAssemblyEmbeddedConfigurationFiles", "Configuration\WebAssemblyConfigurationFiles\WebAssemblyEmbeddedConfigurationFiles.csproj", "{93966EB7-536D-472E-8E94-92EC569014AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

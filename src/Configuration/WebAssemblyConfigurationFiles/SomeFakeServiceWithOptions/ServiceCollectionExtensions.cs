@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace WebAssemblyConfigurationFiles
+namespace WebAssemblyEmbeddedConfigurationFiles
 {
 	public static class ServiceCollectionExtensions
 	{

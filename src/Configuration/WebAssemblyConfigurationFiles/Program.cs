@@ -2,12 +2,12 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using WebAssemblyConfigurationFiles.ConfigurationObjects;
+using WebAssemblyEmbeddedConfigurationFiles.ConfigurationObjects;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Options;
 
-namespace WebAssemblyConfigurationFiles
+namespace WebAssemblyEmbeddedConfigurationFiles
 {
 	public class Program
 	{
