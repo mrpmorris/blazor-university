@@ -11,9 +11,9 @@ namespace WebChat.Pages
 		[Inject]
 		private IChatService ChatService { get; set; }
 
-		[Required]
+		[MinLength(1, ErrorMessage = "Required")]
 		private string Name;
-		[Required]
+		[MinLength(1, ErrorMessage = "Required")]
 		private string Text;
 
 		private string[] ChatHistory = Array.Empty<string>();

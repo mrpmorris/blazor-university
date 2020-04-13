@@ -10,7 +10,7 @@
 	<div class="row mt-1">
 		<div class="col-3">
 			<InputText class="form-control" placeholder="Name" @bind-Value=Name maxlength=20/>
-			<ValidationMessage For=@( () => this.Name )/>
+			<ValidationMessage For=@( () => Name )/>
 		</div>
 		<div class="col-9">
 			<div class="input-group">
@@ -19,7 +19,7 @@
 					<button class="btn btn-primary" type=submit>Send</button>
 				</div>
 			</div>
-			<ValidationMessage For=@( () => this.Text )/>
+			<ValidationMessage For=@( () => Text )/>
 		</div>
 	</div>
 </EditForm>
