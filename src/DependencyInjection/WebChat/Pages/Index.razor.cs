@@ -8,14 +8,13 @@ namespace WebChat.Pages
 {
 	public partial class Index : IDisposable
 	{
+		[Required(ErrorMessage = "Enter name")]
+		public string Name { get; set; }
+		[Required(ErrorMessage = "Enter a message")]
+		public string Text { get; set; }
+
 		[Inject]
 		private IChatService ChatService { get; set; }
-
-		[MinLength(1, ErrorMessage = "Required")]
-		private string Name;
-		[MinLength(1, ErrorMessage = "Required")]
-		private string Text;
-
 		private string[] ChatHistory = Array.Empty<string>();
 		private string ChatHistoryText => string.Join('\r', ChatHistory);
 
