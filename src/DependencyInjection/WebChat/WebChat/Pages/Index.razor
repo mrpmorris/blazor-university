@@ -1,0 +1,25 @@
+﻿@page "/"
+
+<h1>Blazor web chat</h1>
+
+<EditForm Model=@this OnValidSubmit=@SendMessage>
+	<DataAnnotationsValidator/>
+	<div class="row">
+		<textarea class="form-control" rows=20 readonly>@ChatHistoryText</textarea>
+	</div>
+	<div class="row mt-1">
+		<div class="col-3">
+			<InputText class="form-control" placeholder="Name" @bind-Value=Name maxlength=20/>
+			<ValidationMessage For=@( () => this.Name )/>
+		</div>
+		<div class="col-9">
+			<div class="input-group">
+				<InputText class="form-control" placeholder="..." @bind-Value=Text maxlength=100 />
+				<div class="input-group-append">
+					<button class="btn btn-primary" type=submit>Send</button>
+				</div>
+			</div>
+			<ValidationMessage For=@( () => this.Text )/>
+		</div>
+	</div>
+</EditForm>
