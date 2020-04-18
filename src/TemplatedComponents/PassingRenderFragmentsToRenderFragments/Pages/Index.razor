@@ -2,19 +2,12 @@
 
 <DataList Data=@People>
 	<ItemTemplate>
-		<li>@context.Salutation @context.GivenName @context.FamilyName</li>
+		<li @key=context>@context.Salutation @context.GivenName @context.FamilyName</li>
 	</ItemTemplate>
 </DataList>
 
 <DataList Data=@People>
-	<ItemTemplate>
-		<tr>
-			<td>@context.Salutation</td>
-			<td>@context.GivenName</td>
-			<td>@context.FamilyName</td>
-		</tr>
-	</ItemTemplate>
-	<ListTemplate>
+	<ListTemplate Context="listOfPeople">
 		<table border=1 cellpadding=4>
 			<thead>
 				<tr>
@@ -24,10 +17,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				@context
+				@listOfPeople
 			</tbody>
 		</table>
 	</ListTemplate>
+	<ItemTemplate Context="person">
+		<tr @key=@person>
+			<td>@person.Salutation</td>
+			<td>@person.GivenName</td>
+			<td>@person.FamilyName</td>
+		</tr>
+	</ItemTemplate>
 </DataList>
 
 @code

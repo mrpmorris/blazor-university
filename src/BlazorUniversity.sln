@@ -131,9 +131,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DependencyInjection", "Depe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebChat", "DependencyInjection\WebChat\WebChat.csproj", "{5A926F43-F3CC-4EAA-9689-14E9B7EC480C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassingRenderFragmentsToRenderFragments", "TemplatedComponents\PassingRenderFragmentsToRenderFragments\PassingRenderFragmentsToRenderFragments.csproj", "{63D4FDBA-0B64-419F-BCF3-0DC7033DEFAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassingRenderFragmentsToRenderFragments", "TemplatedComponents\PassingRenderFragmentsToRenderFragments\PassingRenderFragmentsToRenderFragments.csproj", "{63D4FDBA-0B64-419F-BCF3-0DC7033DEFAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingTypeParamToCreateGenericComponents", "TemplatedComponents\UsingTypeParamToCreateGenericComponents\UsingTypeParamToCreateGenericComponents.csproj", "{196D012D-3A6C-4916-94AD-B08857655440}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingTypeParamToCreateGenericComponents", "TemplatedComponents\UsingTypeParamToCreateGenericComponents\UsingTypeParamToCreateGenericComponents.csproj", "{196D012D-3A6C-4916-94AD-B08857655440}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,12 +12,12 @@ else
 {
 	@ListTemplate(
 		@:@{
-		  foreach (TItem item in Data ?? Array.Empty<TItem>())
-		  {
-			@ItemTemplate(item)
-		  }
+			foreach (TItem item in Data ?? Array.Empty<TItem>())
+			{
+				@ItemTemplate(item)
+			}
 		}
-	);
+	)
 }
 
 
