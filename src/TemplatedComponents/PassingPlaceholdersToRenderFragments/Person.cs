@@ -1,4 +1,4 @@
-﻿namespace PassingRenderFragmentsToRenderFragments
+﻿namespace PassingPlaceholdersToRenderFragments
 {
 	public class Person
 	{

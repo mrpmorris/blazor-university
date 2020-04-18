@@ -1,6 +1,8 @@
 ﻿@page "/paged"
 
 <h1>PagedDataList</h1>
+
+<hr />
 <h2>ListTemplate and ItemTemplate</h2>
 <PagedDataList Data=@People>
 	<ListTemplate Context="listOfPeople">
@@ -26,6 +28,7 @@
 	</ItemTemplate>
 </PagedDataList>
 
+<hr />
 <h2>ItemTemplate only</h2>
 <PagedDataList Data=@People>
 	<ItemTemplate Context="person">
@@ -35,6 +38,7 @@
 	</ItemTemplate>
 </PagedDataList>
 
+<hr />
 <h2>No templates</h2>
 <PagedDataList Data=@People>
 </PagedDataList>
