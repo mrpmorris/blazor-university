@@ -1,8 +1,9 @@
 ﻿@page "/"
 
-<List Data=@People>
+<h1>A generic list of Person</h1>
+<DataList Data=@People>
 	@context.Salutation @context.FamilyName, @context.GivenName
-</List>
+</DataList>
 
 @code
 {
@@ -15,6 +16,6 @@
 			new Person { Salutation = "Mr", GivenName = "Bob", FamilyName = "Geldof" },
 			new Person { Salutation = "Mrs", GivenName = "Angela", FamilyName = "Rippon" },
 			new Person { Salutation = "Mr", GivenName = "Freddie", FamilyName = "Mercury" }
-			};
+		};
 	}
 }

@@ -1,12 +1,12 @@
 ﻿@page "/"
 
-<List Data=@Data>
+<DataList Data=@People>
 	<ItemTemplate>
 		<li>@context.Salutation @context.GivenName @context.FamilyName</li>
 	</ItemTemplate>
-</List>
+</DataList>
 
-<List Data=@Data>
+<DataList Data=@People>
 	<ItemTemplate>
 		<tr>
 			<td>@context.Salutation</td>
@@ -28,7 +28,7 @@
 			</tbody>
 		</table>
 	</ListTemplate>
-</List>
+</DataList>
 
 @code
 {
