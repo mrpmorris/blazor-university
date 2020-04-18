@@ -1,0 +1,46 @@
+﻿@page "/"
+
+<List Data=@Data>
+	<ItemTemplate>
+		<li>@context.Salutation @context.GivenName @context.FamilyName</li>
+	</ItemTemplate>
+</List>
+
+<List Data=@Data>
+	<ItemTemplate>
+		<tr>
+			<td>@context.Salutation</td>
+			<td>@context.GivenName</td>
+			<td>@context.FamilyName</td>
+		</tr>
+	</ItemTemplate>
+	<ListTemplate>
+		<table border=1 cellpadding=4>
+			<thead>
+				<tr>
+					<th>Salutation</th>
+					<th>Given name</th>
+					<th>Family name</th>
+				</tr>
+			</thead>
+			<tbody>
+				@context
+			</tbody>
+		</table>
+	</ListTemplate>
+</List>
+
+@code
+{
+	private IEnumerable<Person> People;
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		People = new Person[]
+		{
+			new Person { Salutation = "Mr", GivenName = "Bob", FamilyName = "Geldof" },
+			new Person { Salutation = "Mrs", GivenName = "Angela", FamilyName = "Rippon" },
+			new Person { Salutation = "Mr", GivenName = "Freddie", FamilyName = "Mercury" }
+		};
+	}
+}
