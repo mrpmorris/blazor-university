@@ -3,6 +3,21 @@
 <h1>PagedDataList</h1>
 
 <hr />
+<h2>No templates</h2>
+<PagedDataList Data=@People>
+</PagedDataList>
+
+<hr />
+<h2>ItemTemplate only</h2>
+<PagedDataList Data=@People>
+	<ItemTemplate Context="person">
+		<li @key=@person>
+			@person.Salutation @person.FamilyName, @person.GivenName
+		</li>
+	</ItemTemplate>
+</PagedDataList>
+
+<hr />
 <h2>ListTemplate and ItemTemplate</h2>
 <PagedDataList Data=@People>
 	<ListTemplate Context="listOfPeople">
@@ -27,22 +42,6 @@
 		</tr>
 	</ItemTemplate>
 </PagedDataList>
-
-<hr />
-<h2>ItemTemplate only</h2>
-<PagedDataList Data=@People>
-	<ItemTemplate Context="person">
-		<li @key=@person>
-			@person.Salutation @person.FamilyName, @person.GivenName
-		</li>
-	</ItemTemplate>
-</PagedDataList>
-
-<hr />
-<h2>No templates</h2>
-<PagedDataList Data=@People>
-</PagedDataList>
-
 
 @code
 {
