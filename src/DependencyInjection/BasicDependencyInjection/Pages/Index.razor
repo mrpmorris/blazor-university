@@ -1,0 +1,37 @@
+﻿@page "/"
+@inject IToDoApi ToDoApi
+
+<h1>To do</h1>
+@if (Data.Any())
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Completed</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (ToDo item in Data)
+			{
+				<tr>
+					<td>@item.Id</td>
+					<td>@item.Title</td>
+					<td>@item.Completed</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@code
+{
+  private IEnumerable<ToDo> Data = Array.Empty<ToDo>();
+
+  protected override async Task OnInitializedAsync()
+  {
+	  await base.OnInitializedAsync();
+	  Data = await ToDoApi.GetToDosAsync();
+  }
+}

@@ -81,8 +81,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandlingFormSubmission", "F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomValidation", "Forms\CustomValidation\CustomValidation.csproj", "{D6851085-D8CC-44CB-B2C2-EA925CF0AB86}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BECD1274-EC6C-49CF-8C69-DC3A4CE00C8B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScriptInterop", "JavaScriptInterop", "{BE6BDDE7-E299-4EE4-8386-07C485345B4C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassingComplexObjectsToJavaScript", "JavaScriptInterop\PassingComplexObjectsToJavaScript\PassingComplexObjectsToJavaScript.csproj", "{F786B477-38FC-478D-999B-E70BC05BE07B}"
@@ -134,6 +132,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingTypeParamToCreateGenericComponents", "TemplatedComponents\UsingTypeParamToCreateGenericComponents\UsingTypeParamToCreateGenericComponents.csproj", "{196D012D-3A6C-4916-94AD-B08857655440}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassingPlaceholdersToRenderFragments", "TemplatedComponents\PassingPlaceholdersToRenderFragments\PassingPlaceholdersToRenderFragments.csproj", "{E61587F1-A678-45C8-B6D2-7951D5B26905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicDependencyInjection", "DependencyInjection\BasicDependencyInjection\BasicDependencyInjection.csproj", "{395AA4CF-5A67-4B18-9A2F-C1B394AE8E66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -357,6 +357,10 @@ Global
 		{E61587F1-A678-45C8-B6D2-7951D5B26905}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E61587F1-A678-45C8-B6D2-7951D5B26905}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E61587F1-A678-45C8-B6D2-7951D5B26905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395AA4CF-5A67-4B18-9A2F-C1B394AE8E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395AA4CF-5A67-4B18-9A2F-C1B394AE8E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395AA4CF-5A67-4B18-9A2F-C1B394AE8E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395AA4CF-5A67-4B18-9A2F-C1B394AE8E66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -417,6 +421,7 @@ Global
 		{5A926F43-F3CC-4EAA-9689-14E9B7EC480C} = {C4A5AFEF-46B9-47FC-A224-51C9E55741E2}
 		{196D012D-3A6C-4916-94AD-B08857655440} = {791CE696-05BF-4ABE-B4B1-99817E2A41C0}
 		{E61587F1-A678-45C8-B6D2-7951D5B26905} = {791CE696-05BF-4ABE-B4B1-99817E2A41C0}
+		{395AA4CF-5A67-4B18-9A2F-C1B394AE8E66} = {C4A5AFEF-46B9-47FC-A224-51C9E55741E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}
