@@ -1,0 +1,72 @@
+﻿@page "/"
+@page "/{Continue}"
+@inject NavigationManager NavigationManager
+
+<h1>Step @CurrentStep: @CurrentStepName</h1>
+@if (CurrentStep % 2 == 1)
+{
+	<MyStandardComponent />
+	<MyStandardComponent />
+}
+else
+{
+	<MyStandardComponent />
+	<MyStandardComponent />
+}
+<button @onclick=GoToNextStep disabled=@IsButtonDisabled>Next step</button>
+
+<style>
+	.scope-name {
+		width: 5rem;
+		display: inline-block;
+	}
+
+	.instance-info {
+		background-color: #3f8f42;
+		color: white;
+		visibility: hidden;
+		padding: 0 4px;
+		margin: 2px;
+		display: inline-block;
+	}
+
+		.instance-info.new-instance {
+			visibility: visible;
+		}
+</style>
+
+@code
+{
+	[Parameter]
+	public string Continue { get; set; }
+
+	private int CurrentStep = 1;
+	private string CurrentStepName => StepNames[CurrentStep - 1];
+	private bool IsButtonDisabled => CurrentStep >= 6;
+
+	private string[] StepNames = new string[]
+	  {
+		"Website started up",
+		"Recreated components for 1st time",
+		"Recreated components for 2nd time",
+		"Reloaded website",
+		"Recreated components for 3rd time ",
+		"Recreated components for 4th time"
+						  };
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		if (!string.IsNullOrWhiteSpace(Continue))
+			CurrentStep = 4;
+	}
+
+	private void GoToNextStep()
+	{
+		CurrentStep++;
+		if (CurrentStep == 4)
+			NavigationManager.NavigateTo("/continue", forceLoad: true);
+		else
+			InvokeAsync(StateHasChanged);
+	}
+}

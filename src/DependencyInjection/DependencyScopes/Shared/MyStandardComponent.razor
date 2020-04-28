@@ -1,0 +1,32 @@
+﻿@inject IMySingletonService MySingletonService
+@inject IMyScopedService MyScopedService
+@inject IMyTransientService MyTransientService
+<ul>
+	<li>
+		<span class="scope-name">Transient</span>
+		Created at app start time +@MyTransientService.CreatedAfter.ToString("ss\\.f")s
+		<span class="@GetNewIndicatorCss(MyTransientService.CreatedAfter)">New instance</span>
+	</li>
+	<li>
+		<span class="scope-name">Scoped</span>
+		Created at app start time +@MyScopedService.CreatedAfter.ToString("ss\\.f")s
+		<span class="@GetNewIndicatorCss(MyScopedService.CreatedAfter)">New instance</span>
+	</li>
+	<li>
+		<span class="scope-name">Singleton</span>
+		Created at app start time +@MySingletonService.CreatedAfter.ToString("ss\\.f")s
+		<span class="@GetNewIndicatorCss(MySingletonService.CreatedAfter)">New instance</span>
+	</li>
+</ul>
+
+@code
+{
+	private string GetNewIndicatorCss(TimeSpan time)
+	{
+		if (AppLifetime.ElapsedTime - time < TimeSpan.FromMilliseconds(500))
+		{
+			return "instance-info new-instance";
+		}
+		return "instance-info";
+	}
+}
