@@ -21,9 +21,9 @@ namespace DependencyScopes
 		{
 			services.AddRazorPages();
 			services.AddServerSideBlazor();
-			services.AddSingleton<IMySingletonService, MyService>();
-			services.AddScoped<IMyScopedService, MyService>();
-			services.AddTransient<IMyTransientService, MyService>();
+			services.AddSingleton<IMySingletonService, MySingletonService>();
+			services.AddScoped<IMyScopedService, MyScopedService>();
+			services.AddTransient<IMyTransientService, MyTransientService>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
