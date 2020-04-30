@@ -53,7 +53,7 @@ else
 
 	private int CurrentStep = 1;
 	private string CurrentStepName => StepNames[CurrentStep - 1];
-	private bool IsButtonDisabled => CurrentStep >= 6;
+	private bool IsButtonDisabled => CurrentStep >= StepNames.Length;
 
 	private string[] StepNames = new string[]
 	{
