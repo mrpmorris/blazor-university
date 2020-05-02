@@ -5,7 +5,7 @@
 <EditForm Model=@this OnValidSubmit=@SendMessage>
 	<DataAnnotationsValidator/>
 	<div class="row">
-		<textarea class="form-control" rows=20 readonly>@ChatHistoryText</textarea>
+		<textarea @ref=ChatWindow class="form-control" rows=20 readonly>@ChatWindowText</textarea>
 	</div>
 	<div class="row mt-1">
 		<div class="col-3">
