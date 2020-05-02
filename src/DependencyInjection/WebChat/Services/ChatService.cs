@@ -33,7 +33,6 @@ namespace WebChat.Services
 			return true;
 		}
 
-
 		private void RemoveHistory()
 		{
 			lock (ChatHistory)
