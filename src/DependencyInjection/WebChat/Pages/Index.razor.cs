@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using WebChat.Services;
 
 namespace WebChat.Pages
@@ -15,14 +15,22 @@ namespace WebChat.Pages
 
 		[Inject]
 		private IChatService ChatService { get; set; }
-		private string[] ChatHistory = Array.Empty<string>();
-		private string ChatHistoryText => string.Join('\r', ChatHistory);
+		[Inject]
+		private IJSRuntime JSRuntime { get; set; }
+
+		private string ChatWindowText => ChatService.ChatWindowText;
+		private ElementReference ChatWindow;
 
 		protected override void OnInitialized()
 		{
 			base.OnInitialized();
-			ChatHistory = ChatService.GetChatHistory();
 			ChatService.TextAdded += TextAdded;
+		}
+
+		protected override void OnAfterRender(bool firstRender)
+		{
+			base.OnAfterRender(firstRender);
+			//JSRuntime.InvokeVoidAsync("BlazorUniversity.scrollToBottom", ChatWindow);
 		}
 
 		private void SendMessage()
@@ -31,9 +39,8 @@ namespace WebChat.Pages
 				Text = "";
 		}
 
-		private void TextAdded(object sender, string line)
+		private void TextAdded(object sender, EventArgs e)
 		{
-			ChatHistory = ChatHistory.Take(49).Append(line).ToArray();
 			InvokeAsync(StateHasChanged);
 		}
 

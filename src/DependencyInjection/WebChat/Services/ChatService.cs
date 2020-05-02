@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace WebChat.Services
@@ -7,16 +7,17 @@ namespace WebChat.Services
 	public interface IChatService
 	{
 		bool SendMessage(string username, string message);
-		string[] GetChatHistory();
-		event EventHandler<string> TextAdded;
+		string ChatWindowText { get; }
+		event EventHandler TextAdded;
 	}
 
 	public class ChatService : IChatService
 	{
-		public event EventHandler<string> TextAdded;
+		public event EventHandler TextAdded;
+		public string ChatWindowText { get; private set; }
 
-		private ConcurrentQueue<string> ChatHistory = new ConcurrentQueue<string>();
-		public string[] GetChatHistory() => ChatHistory.Reverse().Take(50).Reverse().ToArray();
+		private readonly object SyncRoot = new object();
+		private List<string> ChatHistory = new List<string>();
 
 		public bool SendMessage(string username, string message)
 		{
@@ -24,23 +25,18 @@ namespace WebChat.Services
 				return false;
 
 			string line = $"<{username}> {message}";
-			TextAdded?.Invoke(null, line);
 
-			ChatHistory.Enqueue(line);
-			if (ChatHistory.Count > 100)
-				RemoveHistory();
-
-			return true;
-		}
-
-
-		private void RemoveHistory()
-		{
-			lock (ChatHistory)
+			lock (SyncRoot)
 			{
+				ChatHistory.Add(line);
 				while (ChatHistory.Count > 50)
-					ChatHistory.TryDequeue(out _);
+					ChatHistory.RemoveAt(0);
+
+				ChatWindowText = string.Join("\r\n", ChatHistory.Take(50));
 			}
+
+			TextAdded?.Invoke(this, EventArgs.Empty);
+			return true;
 		}
 	}
 }
