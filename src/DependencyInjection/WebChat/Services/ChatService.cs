@@ -16,6 +16,7 @@ namespace WebChat.Services
 		public event EventHandler<string> TextAdded;
 
 		private ConcurrentQueue<string> ChatHistory = new ConcurrentQueue<string>();
+		public string[] GetChatHistory() => ChatHistory.Reverse().Take(50).Reverse().ToArray();
 
 		public bool SendMessage(string username, string message)
 		{
@@ -32,7 +33,6 @@ namespace WebChat.Services
 			return true;
 		}
 
-		public string[] GetChatHistory() => ChatHistory.Reverse().Take(50).Reverse().ToArray();
 
 		private void RemoveHistory()
 		{
