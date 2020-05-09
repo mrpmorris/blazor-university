@@ -1,0 +1,33 @@
+﻿@page "/"
+
+<div>
+	<input id="show-first" type="checkbox" @bind-value=ShowFirst /><label for="show-first">Show first</label>
+	@if (ShowFirst)
+	{
+		<MyStandardComponent />
+	}
+</div>
+
+<div>
+	<input id="show-second" type="checkbox" @bind-value=ShowSecond /><label for="show-second">Show second</label>
+	@if (ShowSecond)
+	{
+		<MyStandardComponent />
+	}
+</div>
+
+<div>
+	<input id="show-third" type="checkbox" @bind-value=ShowThird /><label for="show-third">Show third</label>
+	@if (ShowThird)
+	{
+		<MyStandardComponent />
+	}
+</div>
+
+@code
+{
+	bool ShowFirst;
+	bool ShowSecond;
+	bool ShowThird;
+}
+
