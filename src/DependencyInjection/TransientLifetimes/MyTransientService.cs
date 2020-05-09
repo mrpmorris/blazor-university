@@ -5,7 +5,7 @@
 		public int InstanceNumber { get; }
 	}
 
-	public class MyTransientService : IMyTransientService
+	public sealed class MyTransientService : IMyTransientService
 	{
 		public int InstanceNumber { get; }
 

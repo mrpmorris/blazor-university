@@ -16,18 +16,9 @@
 	}
 </div>
 
-<div>
-	<input id="show-third" type="checkbox" @bind-value=ShowThird /><label for="show-third">Show third</label>
-	@if (ShowThird)
-	{
-		<MyStandardComponent />
-	}
-</div>
-
 @code
 {
 	bool ShowFirst;
 	bool ShowSecond;
-	bool ShowThird;
 }
 
