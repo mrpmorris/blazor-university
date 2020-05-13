@@ -1,7 +1,7 @@
 ﻿@page "/"
 
 <div>
-	<input id="show-first" type="checkbox" @bind-value=ShowFirst /><label for="show-first">Show first</label>
+	<input id="show-first" type="checkbox" @bind=ShowFirst /><label for="show-first">Show first</label>
 	@if (ShowFirst)
 	{
 		<MyStandardComponent />
@@ -9,7 +9,7 @@
 </div>
 
 <div>
-	<input id="show-second" type="checkbox" @bind-value=ShowSecond /><label for="show-second">Show second</label>
+	<input id="show-second" type="checkbox" @bind=ShowSecond /><label for="show-second">Show second</label>
 	@if (ShowSecond)
 	{
 		<MyStandardComponent />
