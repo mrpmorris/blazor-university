@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DependencyScopes
+namespace ServerDependencyScopes
 {
 	public static class AppLifetime
 	{

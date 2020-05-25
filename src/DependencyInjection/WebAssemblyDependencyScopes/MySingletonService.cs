@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace DependencyScopes
+namespace WebAssemblyDependencyScopes
 {
-	public interface IMyScopedService
+	public interface IMySingletonService
 	{
 		public TimeSpan DeltaCreationTime { get; }
 		public int InstanceNumber { get; }
 	}
 
-	public class MyScopedService : IMyScopedService
+	public class MySingletonService : IMySingletonService
 	{
 		public TimeSpan DeltaCreationTime { get; }
 		public int InstanceNumber { get; }
 
 		private static volatile int PreviousInstanceNumber;
 
-		public MyScopedService()
+		public MySingletonService()
 		{
 			DeltaCreationTime = DateTime.UtcNow - AppLifetime.StartTimeUtc;
 			InstanceNumber = System.Threading.Interlocked.Increment(ref PreviousInstanceNumber);

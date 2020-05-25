@@ -1,0 +1,37 @@
+﻿@inject IMySingletonService MySingletonService
+@inject IMyScopedService MyScopedService
+@inject IMyTransientService MyTransientService
+<dl>
+	<dt>@Caption</dt>
+	<dd>
+		<ul>
+			<li>
+				<span class="scope-name">Singleton</span>
+				<span class="@GetNewIndicatorCss(MySingletonService.DeltaCreationTime)">Instance #@MySingletonService.InstanceNumber</span>
+			</li>
+			<li>
+				<span class="scope-name">Scoped</span>
+				<span class="@GetNewIndicatorCss(MyScopedService.DeltaCreationTime)">Instance #@MyScopedService.InstanceNumber</span>
+			</li>
+			<li>
+				<span class="scope-name">Transient</span>
+				<span class="@GetNewIndicatorCss(MyTransientService.DeltaCreationTime)">Instance #@MyTransientService.InstanceNumber</span>
+			</li>
+		</ul>
+	</dd>
+</dl>
+
+@code
+{
+	[Parameter]
+	public string Caption { get; set; }
+
+	private string GetNewIndicatorCss(TimeSpan time)
+	{
+		if (AppLifetime.ElapsedTime - time < TimeSpan.FromMilliseconds(500))
+		{
+			return "instance-info new-instance";
+		}
+		return "instance-info";
+	}
+}

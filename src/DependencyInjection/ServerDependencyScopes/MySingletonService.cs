@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace DependencyScopes
+namespace ServerDependencyScopes
 {
-	public interface IMyTransientService
+	public interface IMySingletonService
 	{
 		public TimeSpan DeltaCreationTime { get; }
 		public int InstanceNumber { get; }
 	}
 
-	public class MyTransientService : IMyTransientService
+	public class MySingletonService : IMySingletonService
 	{
 		public TimeSpan DeltaCreationTime { get; }
 		public int InstanceNumber { get; }
 
 		private static volatile int PreviousInstanceNumber;
 
-		public MyTransientService()
+		public MySingletonService()
 		{
 			DeltaCreationTime = DateTime.UtcNow - AppLifetime.StartTimeUtc;
 			InstanceNumber = System.Threading.Interlocked.Increment(ref PreviousInstanceNumber);
