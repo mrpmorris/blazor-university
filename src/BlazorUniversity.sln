@@ -125,7 +125,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicDependencyInjection", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyScopes", "DependencyInjection\DependencyScopes\DependencyScopes.csproj", "{9E1BDB41-4B99-4807-8BA4-FC605B891E58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransientLifetimes", "DependencyInjection\TransientLifetimes\TransientLifetimes.csproj", "{883D549D-6582-41D4-92C4-01B9D246BF38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransientLifetimes", "DependencyInjection\TransientLifetimes\TransientLifetimes.csproj", "{883D549D-6582-41D4-92C4-01B9D246BF38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
