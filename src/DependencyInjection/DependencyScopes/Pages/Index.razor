@@ -75,7 +75,5 @@ else
 		CurrentStep++;
 		if (CurrentStep == 3)
 			NavigationManager.NavigateTo("/continue", forceLoad: true);
-		else
-			InvokeAsync(StateHasChanged);
 	}
 }
