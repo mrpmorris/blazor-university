@@ -1,5 +1,6 @@
 ﻿@inherits OwningComponentBase<IMyScopedService>
 @inject IMySingletonService MySingletonService
+@inject IMyScopedService MyScopedService
 @inject IMyTransientService MyTransientService
 <dl>
 	<dt>OwningComponentBase&lt;IMyScopedService&gt;</dt>
@@ -11,7 +12,19 @@
 			</li>
 			<li>
 				<span class="scope-name">Scoped</span>
+				<span class="@GetNewIndicatorCss(MyScopedService.DeltaCreationTime)">Instance #@MyScopedService.InstanceNumber</span>
+				Injected with IMyOtherScopedService
+				<span class="@GetNewIndicatorCss(MyScopedService.MyOtherScopedService.DeltaCreationTime)">
+					Instance #@MyScopedService.MyOtherScopedService.InstanceNumber
+				</span>
+			</li>
+			<li>
+				<span class="scope-name">Owned</span>
 				<span class="@GetNewIndicatorCss(Service.DeltaCreationTime)">Instance #@Service.InstanceNumber</span>
+				Injected with IMyOtherScopedService
+				<span class="@GetNewIndicatorCss(Service.MyOtherScopedService.DeltaCreationTime)">
+					Instance #@Service.MyOtherScopedService.InstanceNumber
+				</span>
 			</li>
 			<li>
 				<span class="scope-name">Transient</span>

@@ -12,6 +12,10 @@
 			<li>
 				<span class="scope-name">Scoped</span>
 				<span class="@GetNewIndicatorCss(MyScopedService.DeltaCreationTime)">Instance #@MyScopedService.InstanceNumber</span>
+				Injected with IMyOtherScopedService
+				<span class="@GetNewIndicatorCss(MyScopedService.MyOtherScopedService.DeltaCreationTime)">
+					Instance #@MyScopedService.MyOtherScopedService.InstanceNumber
+				</span>
 			</li>
 			<li>
 				<span class="scope-name">Transient</span>

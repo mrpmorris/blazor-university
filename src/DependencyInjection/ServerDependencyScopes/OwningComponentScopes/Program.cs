@@ -14,6 +14,7 @@ namespace OwningComponentScopes
 
 			builder.Services.AddSingleton<IMySingletonService, MySingletonService>();
 			builder.Services.AddScoped<IMyScopedService, MyScopedService>();
+			builder.Services.AddScoped<IMyOtherScopedService, MyOtherScopedService>();
 			builder.Services.AddTransient<IMyTransientService, MyTransientService>();
 
 			await builder.Build().RunAsync();

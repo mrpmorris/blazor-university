@@ -2,31 +2,30 @@
 
 namespace OwningComponentScopes
 {
-	public interface IMyScopedService
+	public interface IMyOtherScopedService
 	{
 		public TimeSpan DeltaCreationTime { get; }
 		public int InstanceNumber { get; }
-		public IMyOtherScopedService MyOtherScopedService { get;  }
 	}
 
-	public sealed class MyScopedService : IMyScopedService, IDisposable
+
+	public sealed class MyOtherScopedService : IMyOtherScopedService, IDisposable
 	{
 		public TimeSpan DeltaCreationTime { get; }
 		public int InstanceNumber { get; }
-		public IMyOtherScopedService MyOtherScopedService { get;  }
 
 		private static volatile int PreviousInstanceNumber;
 
-		public MyScopedService(IMyOtherScopedService myOtherScopedService)
+		public MyOtherScopedService()
 		{
 			DeltaCreationTime = DateTime.UtcNow - AppLifetime.StartTimeUtc;
 			InstanceNumber = System.Threading.Interlocked.Increment(ref PreviousInstanceNumber);
-			MyOtherScopedService = myOtherScopedService;
 		}
 
 		void IDisposable.Dispose()
 		{
-			System.Diagnostics.Debug.WriteLine($"Disposed MyScopedService instance {InstanceNumber}");
+			System.Diagnostics.Debug.WriteLine($"Disposed MyOtherScopedService instance {InstanceNumber}");
 		}
 	}
+
 }
