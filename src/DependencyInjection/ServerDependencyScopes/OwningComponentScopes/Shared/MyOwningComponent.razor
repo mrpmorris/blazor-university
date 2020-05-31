@@ -1,0 +1,34 @@
+﻿@inherits OwningComponentBase<IMyScopedService>
+@inject IMySingletonService MySingletonService
+@inject IMyTransientService MyTransientService
+<dl>
+	<dt>OwningComponentBase&lt;IMyScopedService&gt;</dt>
+	<dd>
+		<ul>
+			<li>
+				<span class="scope-name">Singleton</span>
+				<span class="@GetNewIndicatorCss(MySingletonService.DeltaCreationTime)">Instance #@MySingletonService.InstanceNumber</span>
+			</li>
+			<li>
+				<span class="scope-name">Scoped</span>
+				<span class="@GetNewIndicatorCss(Service.DeltaCreationTime)">Instance #@Service.InstanceNumber</span>
+			</li>
+			<li>
+				<span class="scope-name">Transient</span>
+				<span class="@GetNewIndicatorCss(MyTransientService.DeltaCreationTime)">Instance #@MyTransientService.InstanceNumber</span>
+			</li>
+		</ul>
+	</dd>
+</dl>
+
+@code
+{
+	private string GetNewIndicatorCss(TimeSpan time)
+	{
+		if (AppLifetime.ElapsedTime - time < TimeSpan.FromMilliseconds(500))
+		{
+			return "instance-info new-instance";
+		}
+		return "instance-info";
+	}
+}

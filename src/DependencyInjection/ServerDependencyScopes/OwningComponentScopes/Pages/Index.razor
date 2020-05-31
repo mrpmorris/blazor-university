@@ -1,0 +1,57 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+<div>
+	<input id="show1" type="checkbox" @bind=ShowFirstComponent />
+	<label for="show1">Toggle ComponentBase</label>
+</div>
+@if (@ShowFirstComponent)
+{
+	<MyStandardComponent/>
+}
+
+<div>
+	<input id="show2" type="checkbox" @bind=ShowSecondComponent />
+	<label for="show2">Toggle OwningComponentBase&lt;IMyScopedService&gt;</label>
+</div>
+@if (ShowSecondComponent)
+{
+	<MyOwningComponent />
+}
+
+<style>
+	.scope-name {
+		width: 5rem;
+		display: inline-block;
+		font-weight: bold;
+	}
+
+	.instance-info {
+		color: white;
+		background-color: #888;
+		padding: 0 4px;
+		margin: 2px;
+		display: inline-block;
+	}
+
+		.instance-info.new-instance {
+			background-color: #3f8f42;
+			animation: flash-green 2s;
+		}
+
+	@@keyframes flash-green {
+		from {
+			background-color: #4cff00;
+		}
+
+		to {
+			background-color: #3f8f42;
+		}
+	}
+</style>
+
+@code
+{
+	bool ShowFirstComponent = true;
+	bool ShowSecondComponent = true;
+}
