@@ -1,0 +1,13 @@
+﻿<p>Async rendered by thread @IdOfRenderingThread</p>
+
+@code
+{
+	int IdOfRenderingThread;
+
+	protected override async Task OnInitializedAsync()
+	{
+		await base.OnInitializedAsync().ConfigureAwait(false);
+		await Task.Delay(1000).ConfigureAwait(false);
+		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId;
+	}
+}
