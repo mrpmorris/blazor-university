@@ -6,6 +6,7 @@
 
 	protected override async Task OnInitializedAsync()
 	{
+		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId;
 		await base.OnInitializedAsync().ConfigureAwait(false);
 		await Task.Delay(1000).ConfigureAwait(false);
 		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId;
