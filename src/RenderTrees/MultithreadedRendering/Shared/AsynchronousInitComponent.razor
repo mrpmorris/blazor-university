@@ -14,6 +14,6 @@
 		// Awaiting will schedule a job for later, and we will be assigned
 		// whichever worker thread is next available
 		await Task.Delay(1000).ConfigureAwait(false);
-		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId + 1;
+		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId;
 	}
 }
