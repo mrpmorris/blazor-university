@@ -6,8 +6,8 @@
 
 	protected override async Task OnInitializedAsync()
 	{
-		// Runs synchronously as there is no code in base.OnInitialized()
-		// So the same thread is used
+		// Runs synchronously as there is no code in base.OnInitialized(),
+		// so the same thread is used
 		await base.OnInitializedAsync().ConfigureAwait(false);
 		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId;
 
