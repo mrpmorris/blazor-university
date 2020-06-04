@@ -6,9 +6,14 @@
 
 	protected override async Task OnInitializedAsync()
 	{
-		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId;
+		// Runs synchronously as there is no code in base.OnInitialized()
+		// So the same thread is used
 		await base.OnInitializedAsync().ConfigureAwait(false);
-		await Task.Delay(1000).ConfigureAwait(false);
 		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId;
+
+		// Awaiting will schedule a job for later, and we will be assigned
+		// whichever worker thread is next available
+		await Task.Delay(1000).ConfigureAwait(false);
+		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId + 1;
 	}
 }
