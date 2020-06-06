@@ -16,7 +16,7 @@ namespace UsingGenericOwningComponentBase.Data
 
 		public async Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
 		{
-			if (Interlocked.CompareExchange(ref Locked, 1, 0) != 0)
+			if (Interlocked.CompareExchange(ref Locked, 1, 0) > 0)
 				throw new InvalidOperationException(
 					"A second operation started on this context before a previous operation completed. Any "
 					+ "instance members are not guaranteed to be thread-safe.");
