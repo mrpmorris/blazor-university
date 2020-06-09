@@ -135,6 +135,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingGenericOwningComponent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultithreadedRendering", "RenderTrees\MultithreadedRendering\MultithreadedRendering.csproj", "{D54DA97C-EF4A-4516-94DC-68A3F4422CE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingInvokeAsync", "RenderTrees\UsingInvokeAsync\UsingInvokeAsync.csproj", "{16BF8CE8-E901-4FE1-ADEA-28E28483F055}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -369,6 +371,10 @@ Global
 		{D54DA97C-EF4A-4516-94DC-68A3F4422CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D54DA97C-EF4A-4516-94DC-68A3F4422CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D54DA97C-EF4A-4516-94DC-68A3F4422CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BF8CE8-E901-4FE1-ADEA-28E28483F055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BF8CE8-E901-4FE1-ADEA-28E28483F055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BF8CE8-E901-4FE1-ADEA-28E28483F055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BF8CE8-E901-4FE1-ADEA-28E28483F055}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -431,6 +437,7 @@ Global
 		{9416EBCD-690B-44A8-AA63-0FDFEAA93AF6} = {C4A5AFEF-46B9-47FC-A224-51C9E55741E2}
 		{8C47E2EF-75C4-49F4-BAEE-4D32F0F411AB} = {C4A5AFEF-46B9-47FC-A224-51C9E55741E2}
 		{D54DA97C-EF4A-4516-94DC-68A3F4422CE8} = {ADEA11C5-AE59-463B-8ACC-21BE9BAC85BB}
+		{16BF8CE8-E901-4FE1-ADEA-28E28483F055} = {ADEA11C5-AE59-463B-8ACC-21BE9BAC85BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBB31FDE-7E23-41D8-BE07-7C6B53FF6E28}

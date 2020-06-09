@@ -1,0 +1,38 @@
+﻿@page "/"
+<div>
+	<input type="checkbox" @bind=UseInvokeAsync id="UseInvokeAsyncCheckbox" />
+	<label for="UseInvokeAsyncCheckbox">Use InvokeAsync</label>
+</div>
+<div>
+	<button @onclick=Start disabled=@IsWorking>Start</button>
+</div>
+<ShowCounterValue />
+@if (IsWorking)
+{
+	for (int i = 0; i < 5; i++)
+	{
+		<IncrementCounter Trigger=@Trigger ShouldUseInvokeAsync=@UseInvokeAsync />
+	}
+}
+
+@code
+{
+	private bool IsWorking;
+	private bool UseInvokeAsync;
+	private System.Threading.ManualResetEvent Trigger = new System.Threading.ManualResetEvent(false);
+
+	private async Task Start()
+	{
+		CounterState.Value = 0;
+		IsWorking = true;
+		StateHasChanged();
+
+		await Task.Delay(500);
+		Trigger.Set();
+
+		await Task.Delay(1000);
+		IsWorking = false;
+		Trigger.Reset();
+	}
+
+}
