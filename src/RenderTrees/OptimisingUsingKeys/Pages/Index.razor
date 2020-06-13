@@ -14,7 +14,7 @@ Welcome to your new app.
 <ol>
 	@foreach (Person person in People)
 	{
-		<li class="card" @key=person.ID>
+		<li class="card" @key=person>
 			<img class="card-img-top" src="https://randomuser.me/api/portraits/men/@(person.ID).jpg" />
 			<div class="card-body">
 				<h5 class="card-title">
