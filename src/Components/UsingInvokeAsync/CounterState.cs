@@ -1,6 +1,6 @@
 ﻿namespace UsingInvokeAsync
 {
-	public class CounterState
+	public static class CounterState
 	{
 		public static int Value { get; set; }
 	}
