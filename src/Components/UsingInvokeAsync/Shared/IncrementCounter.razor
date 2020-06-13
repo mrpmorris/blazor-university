@@ -11,7 +11,7 @@
 
 	protected override void OnInitialized()
 	{
-		new System.Threading.Thread(_ =>
+		var thread = new System.Threading.Thread(_ =>
 		{
 			Trigger.WaitOne();
 			for (int i = 0; i < 1000; i++)
@@ -25,6 +25,8 @@
 					InvokeAsync(() => CounterState.Value++);
 				}
 			}
-		}).Start();
+		});
+
+		thread.Start();
 	}
 }
