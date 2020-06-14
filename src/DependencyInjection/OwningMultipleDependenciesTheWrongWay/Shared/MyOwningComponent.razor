@@ -1,0 +1,9 @@
+﻿@inherits OwningComponentBase<IOwnedDependency>
+@inject IInjectedDependency InjectedDependency
+
+<div>
+	Service.InstanceNumber = @Service.InstanceNumber
+</div>
+<div>
+	InjectedDependency.InstanceName = @InjectedDependency.InstanceNumber
+</div>
