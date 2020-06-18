@@ -1,0 +1,22 @@
+﻿@inherits OwningComponentBase
+@using Microsoft.Extensions.DependencyInjection
+
+
+<div>
+	Service.InstanceNumber = @OwnedDependency1.InstanceNumber
+</div>
+<div>
+	InjectedDependency.InstanceName = @OwnedDependency2.InstanceNumber
+</div>
+
+@code
+{
+	private IOwnedDependency1 OwnedDependency1;
+	private IOwnedDependency2 OwnedDependency2;
+
+	protected override void OnInitialized()
+	{
+		OwnedDependency1 = ScopedServices.GetService<IOwnedDependency1>();
+		OwnedDependency2 = ScopedServices.GetService<IOwnedDependency2>();
+	}
+}
