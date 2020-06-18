@@ -1,4 +1,6 @@
-﻿namespace OwningMultipleDependenciesTheRightWay
+﻿using System;
+
+namespace OwningMultipleDependenciesTheRightWay
 {
 	public interface IOwnedDependency1
 	{
@@ -6,7 +8,7 @@
 	}
 
 
-	public class OwnedDependency1 : IOwnedDependency1
+	public class OwnedDependency1 : IOwnedDependency1, IDisposable
 	{
 		private static volatile int PreviousInstanceNumber;
 
@@ -14,6 +16,11 @@
 		public OwnedDependency1()
 		{
 			InstanceNumber = System.Threading.Interlocked.Increment(ref PreviousInstanceNumber);
+		}
+
+		public void Dispose()
+		{
+			System.Diagnostics.Debug.WriteLine("Disposing " + GetType().Name);
 		}
 	}
 }
