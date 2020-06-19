@@ -1,18 +1,18 @@
 ﻿@page "/"
 
 <h1>Toggle the options</h1>
-<input @bind-value=firstOptionValue type="checkbox" /> first option
+<input @bind-value=FirstOptionValue type="checkbox" /> First option
 <br />
-<input @bind-value=secondOptionValue type="checkbox" /> second option
+<input @bind-value=SecondOptionValue type="checkbox" /> Second option
 <br />
 
-<CascadingValue Name="FirstOption" Value=@firstOptionValue>
-	<CascadingValue Name="SecondOption" Value=@secondOptionValue>
+<CascadingValue Name="FirstOption" Value=@FirstOptionValue>
+	<CascadingValue Name="SecondOption" Value=@SecondOptionValue>
 		<FirstLevelComponent />
 	</CascadingValue>
 </CascadingValue>
 
 @code {
-	bool firstOptionValue;
-	bool secondOptionValue;
+	bool FirstOptionValue;
+	bool SecondOptionValue;
 }
