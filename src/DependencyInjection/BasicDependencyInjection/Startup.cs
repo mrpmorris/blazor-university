@@ -22,7 +22,6 @@ namespace BasicDependencyInjection
 		{
 			services.AddRazorPages();
 			services.AddServerSideBlazor();
-			services.AddSingleton<HttpClient>();
 			services.AddSingleton<IToDoApi, ToDoApi>();
 		}
 
