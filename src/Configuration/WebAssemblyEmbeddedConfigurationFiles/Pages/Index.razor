@@ -1,9 +1,0 @@
-﻿@page "/"
-@using ConfigurationObjects
-@using Microsoft.Extensions.Options
-@inject IOptions<ServiceSettings> ServiceSettings
-
-<ul>
-	<li>Url = @ServiceSettings.Value.Url</li>
-	<li>Access token = @ServiceSettings.Value.AccessToken</li>
-</ul>
