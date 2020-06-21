@@ -137,7 +137,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultithreadedRendering", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingInvokeAsync", "Components\UsingInvokeAsync\UsingInvokeAsync.csproj", "{57C90084-56FD-42D6-BB52-4DFFD2588C12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwningMultipleDependenciesTheWrongWay", "DependencyInjection\OwningMultipleDependenciesTheWrongWay\OwningMultipleDependenciesTheWrongWay.csproj", "{DA68E51E-E45D-42EA-8E65-EF671F29C03F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OwningMultipleDependenciesTheWrongWay", "DependencyInjection\OwningMultipleDependenciesTheWrongWay\OwningMultipleDependenciesTheWrongWay.csproj", "{DA68E51E-E45D-42EA-8E65-EF671F29C03F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
