@@ -1,0 +1,46 @@
+﻿@inherits OwningComponentBase
+@using Microsoft.Extensions.DependencyInjection
+
+
+<div>
+<<<<<<< HEAD
+	OwnedDependency1.InstanceNumber = @OwnedDependency1.InstanceNumber
+</div>
+<div>
+	OwnedDependency2.InstanceNumber = @OwnedDependency2.InstanceNumber
+=======
+	Service.InstanceNumber = @OwnedDependency1.InstanceNumber
+</div>
+<div>
+	InjectedDependency.InstanceName = @OwnedDependency2.InstanceNumber
+>>>>>>> 5eac0ec61a3612a2801e7d514e554195f5777a30
+</div>
+
+@code
+{
+	private IOwnedDependency1 OwnedDependency1;
+	private IOwnedDependency2 OwnedDependency2;
+
+<<<<<<< HEAD
+	public MyOwningComponent()
+	{
+		System.Diagnostics.Debug.WriteLine("Created MyOwningComponent");
+	}
+
+=======
+>>>>>>> 5eac0ec61a3612a2801e7d514e554195f5777a30
+	protected override void OnInitialized()
+	{
+		OwnedDependency1 = ScopedServices.GetService<IOwnedDependency1>();
+		OwnedDependency2 = ScopedServices.GetService<IOwnedDependency2>();
+	}
+<<<<<<< HEAD
+
+	protected override void Dispose(bool disposing)
+	{
+		base.Dispose(disposing);
+		System.Diagnostics.Debug.WriteLine("Disposing MyOwningComponent");
+	}
+=======
+>>>>>>> 5eac0ec61a3612a2801e7d514e554195f5777a30
+}

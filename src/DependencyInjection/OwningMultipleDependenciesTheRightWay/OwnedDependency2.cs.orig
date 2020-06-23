@@ -1,0 +1,34 @@
+﻿using System;
+
+namespace OwningMultipleDependenciesTheRightWay
+{
+	public interface IOwnedDependency2
+	{
+		public int InstanceNumber { get; }
+	}
+
+
+	public class OwnedDependency2 : IOwnedDependency2, IDisposable
+	{
+		private static volatile int PreviousInstanceNumber;
+
+		public int InstanceNumber { get; }
+		public OwnedDependency2()
+		{
+			InstanceNumber = System.Threading.Interlocked.Increment(ref PreviousInstanceNumber);
+<<<<<<< HEAD
+			System.Diagnostics.Debug.WriteLine($"Created {GetType().Name} instance {InstanceNumber}");
+=======
+>>>>>>> 5eac0ec61a3612a2801e7d514e554195f5777a30
+		}
+
+		public void Dispose()
+		{
+<<<<<<< HEAD
+			System.Diagnostics.Debug.WriteLine($"Disposing {GetType().Name} instance {InstanceNumber}");
+=======
+			System.Diagnostics.Debug.WriteLine("Disposing " + GetType().Name);
+>>>>>>> 5eac0ec61a3612a2801e7d514e554195f5777a30
+		}
+	}
+}
