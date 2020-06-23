@@ -14,9 +14,20 @@
 	private IOwnedDependency1 OwnedDependency1;
 	private IOwnedDependency2 OwnedDependency2;
 
+	public MyOwningComponent()
+	{
+		System.Diagnostics.Debug.WriteLine("Created MyOwningComponent");
+	}
+
 	protected override void OnInitialized()
 	{
 		OwnedDependency1 = ScopedServices.GetService<IOwnedDependency1>();
 		OwnedDependency2 = ScopedServices.GetService<IOwnedDependency2>();
+	}
+
+	protected override void Dispose(bool disposing)
+	{
+		base.Dispose(disposing);
+		System.Diagnostics.Debug.WriteLine("Disposing MyOwningComponent");
 	}
 }

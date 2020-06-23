@@ -16,11 +16,12 @@ namespace OwningMultipleDependenciesTheRightWay
 		public OwnedDependency2()
 		{
 			InstanceNumber = System.Threading.Interlocked.Increment(ref PreviousInstanceNumber);
+			System.Diagnostics.Debug.WriteLine($"Created {GetType().Name} instance {InstanceNumber}");
 		}
 
 		public void Dispose()
 		{
-			System.Diagnostics.Debug.WriteLine("Disposing " + GetType().Name);
+			System.Diagnostics.Debug.WriteLine($"Disposing {GetType().Name} instance {InstanceNumber}");
 		}
 	}
 }
