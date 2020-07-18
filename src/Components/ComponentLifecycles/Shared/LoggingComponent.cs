@@ -1,17 +1,16 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
 using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ComponentLifecycles.Pages
+namespace ComponentLifecycles.Shared
 {
-	public class EmbeddedComponent : ComponentBase, IDisposable
+	public class LoggingComponent : ComponentBase, IDisposable
 	{
-		private volatile int IndentSize;
-		public EmbeddedComponent()
+		private static volatile int IndentSize;
+		public LoggingComponent()
 		{
 			Log("Component created");
 			IncreaseIndent();
@@ -90,14 +89,9 @@ namespace ComponentLifecycles.Pages
 			Log($"OnAfterRenderAsync({firstRender}) finished");
 		}
 
-		protected override void BuildRenderTree(RenderTreeBuilder builder)
-		{
-			Log("BuildRenderTree started");
-			Log("BuildRenderTree finished");
-		}
-
 		public virtual void Dispose()
 		{
+			DecreaseIndent();
 			Log("Disposed");
 		}
 

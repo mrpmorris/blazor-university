@@ -1,4 +1,9 @@
 ﻿@page "/"
+@inherits LoggingComponent
+
+@{
+    Log("BuildRenderTree started");
+}
 
 <h1>Look in the browser console output!</h1>
 
@@ -6,6 +11,10 @@
 <EmbeddedComponent Count=@currentCount />
 
 <button class="btn btn-primary" @onclick=IncrementCount>Click me</button>
+
+@{
+    Log("BuildRenderTree finished");
+}
 
 @code {
     int currentCount = 0;
