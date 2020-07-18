@@ -1,17 +1,17 @@
-﻿@page "/counter"
-@inherits ComponentLifecyclesPageBase
+﻿@page "/"
 
 <h1>Look in the browser console output!</h1>
 
 <p>Current count: @currentCount</p>
+<EmbeddedComponent Count=@currentCount />
 
 <button class="btn btn-primary" @onclick=IncrementCount>Click me</button>
 
 @code {
-	int currentCount = 0;
+    int currentCount = 0;
 
-	void IncrementCount()
-	{
-		currentCount++;
-	}
+    void IncrementCount()
+    {
+        currentCount++;
+    }
 }
