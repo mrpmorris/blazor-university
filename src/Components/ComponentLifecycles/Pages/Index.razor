@@ -2,31 +2,39 @@
 @inherits ComponentLifecyclesPageBase
 @using System.Threading
 
+@{
+    Log("BuildRenderTree started");
+}
+
 <h1>Look in the browser console output!</h1>
 
-The time now is @Time.ToString("hh:mm:ss")
+The time now is @Time.ToString("HH:mm:ss")
 
+@{
+    Log("BuildRenderTree finished");
+}
 
 @code {
-	DateTime Time = DateTime.Now;
-	Timer Timer;
+    DateTime Time = DateTime.Now;
+    TimeSpan UpdateFrequency = TimeSpan.FromSeconds(10);
+    Timer Timer;
 
-	protected override void OnInitialized()
-	{
-		Timer = new System.Threading.Timer(_ => UpdateTheTime(), null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
-		base.OnInitialized();
-	}
+    protected override void OnInitialized()
+    {
+        Timer = new System.Threading.Timer(_ => UpdateTheTime(), null, UpdateFrequency, UpdateFrequency);
+        base.OnInitialized();
+    }
 
-	public override void Dispose()
-	{
-		Timer.Dispose();
-		base.Dispose();
-	}
+    public override void Dispose()
+    {
+        Timer.Dispose();
+        base.Dispose();
+    }
 
-	void UpdateTheTime()
-	{
-		Time = DateTime.Now;
-		Log("StateHasChanged() called from UpdateTheTime");
-		StateHasChanged();
-	}
+    void UpdateTheTime()
+    {
+        Time = DateTime.Now;
+        Log("StateHasChanged() called from UpdateTheTime");
+        StateHasChanged();
+    }
 }

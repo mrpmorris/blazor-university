@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Diagnostics;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ComponentLifecycles.Pages
@@ -12,46 +13,73 @@ namespace ComponentLifecycles.Pages
 			Log("Component created");
 		}
 
-		public override Task SetParametersAsync(ParameterView parameters)
+		public override async Task SetParametersAsync(ParameterView parameters)
 		{
-			Log("SetParametersAsync()");
-			return base.SetParametersAsync(parameters);
+			Log("SetParametersAsync() started");
+			await base.SetParametersAsync(parameters);
+			Log("SetParametersAsync() base called");
+			await Task.Delay(100);
+			Log("SetParametersAsync() end wait 1");
+			await Task.Delay(100);
+			Log("SetParametersAsync() end wait 2");
+			Log("SetParametersAsync() finished");
 		}
 
 		protected override void OnInitialized()
 		{
-			Log("OnInitialized()");
+			Log("OnInitialized() started");
 			base.OnInitialized();
+			Log("OnInitialized() finished");
 		}
 
-		protected override Task OnInitializedAsync()
+		protected override async Task OnInitializedAsync()
 		{
-			Log("OnInitializedAsync()");
-			return base.OnInitializedAsync();
+			Log("OnInitializedAsync() started");
+			await base.OnInitializedAsync();
+			Log("OnInitializedAsync() base called");
+			await Task.Delay(100);
+			Log("OnInitializedAsync() end wait 1");
+			await Task.Delay(100);
+			Log("OnInitializedAsync() end wait 2");
+			Log("OnInitializedAsync() finished");
 		}
 
 		protected override void OnParametersSet()
 		{
-			Log("OnParametersSet()");
+			Log("OnParametersSet() started");
 			base.OnParametersSet();
+			Log("OnParametersSet() finished");
 		}
 
-		protected override Task OnParametersSetAsync()
+		protected override async Task OnParametersSetAsync()
 		{
-			Log("OnParametersSetAsync()");
-			return base.OnParametersSetAsync();
+			Log("OnParametersSetAsync() started");
+			await base.OnParametersSetAsync();
+			Log("OnParametersSetAsync() base called");
+			await Task.Delay(100);
+			Log("OnParametersSetAsync() end wait 1");
+			await Task.Delay(100);
+			Log("OnParametersSetAsync() end wait 2");
+			Log("OnParametersSetAsync() finished");
 		}
 
 		protected override void OnAfterRender(bool firstRender)
 		{
-			Log($"OnAfterRender({firstRender})");
+			Log($"OnAfterRender({firstRender}) started");
 			base.OnAfterRender(firstRender);
+			Log($"OnAfterRender({firstRender}) finished");
 		}
 
-		protected override Task OnAfterRenderAsync(bool firstRender)
+		protected override async Task OnAfterRenderAsync(bool firstRender)
 		{
-			Log($"OnAfterRenderAsyc({firstRender})");
-			return base.OnAfterRenderAsync(firstRender);
+			Log($"OnAfterRenderAsync({firstRender}) started");
+			await base.OnParametersSetAsync();
+			Log($"OnAfterRenderAsync({firstRender}) base called");
+			await Task.Delay(100);
+			Log($"OnAfterRenderAsync({firstRender}) end wait 1");
+			await Task.Delay(100);
+			Log($"OnAfterRenderAsync({firstRender}) end wait 2");
+			Log($"OnAfterRenderAsync({firstRender}) finished");
 		}
 
 
