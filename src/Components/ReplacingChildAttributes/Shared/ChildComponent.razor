@@ -1,0 +1,9 @@
+﻿<div first="1" second="2" @attributes=AllOtherAttributes third="3" fourth="4">
+	Right-click and inspect the HTML for this element to see the results!
+</div>
+
+@code
+{
+  [Parameter(CaptureUnmatchedValues=true)]
+  public Dictionary<string, object> AllOtherAttributes { get; set; }
+}
