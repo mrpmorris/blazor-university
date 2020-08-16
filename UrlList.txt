@@ -91,3 +91,4 @@ https://blazor-university.com/deploying-blazor/
 https://blazor-university.com/interesting-blazor-projects/
 https://blazor-university.com/terms-of-service/
 https://blazor-university.com/dependency-injection/component-scoped-dependencies/owning-multiple-dependencies-the-right-way/
+https://blazor-university.com/components/replacing-attributes-on-child-components/
