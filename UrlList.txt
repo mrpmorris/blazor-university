@@ -23,6 +23,7 @@ https://blazor-university.com/components/cascading-values/
 https://blazor-university.com/components/cascading-values/cascading-values-by-name/
 https://blazor-university.com/components/cascading-values/cascading-values-by-type/
 https://blazor-university.com/components/cascading-values/overriding-cascaded-values/
+
 https://blazor-university.com/components/code-generated-html-attributes/
 https://blazor-university.com/components/capturing-unexpected-parameters/
 https://blazor-university.com/components/component-lifecycles/
@@ -49,6 +50,7 @@ https://blazor-university.com/routing/navigating-our-app-via-code/
 https://blazor-university.com/routing/detecting-navigation-events/
 https://blazor-university.com/forms/
 https://blazor-university.com/forms/editing-form-data/
+
 https://blazor-university.com/forms/descending-from-inputbase/
 https://blazor-university.com/forms/validation/
 https://blazor-university.com/forms/accessing-form-state/
@@ -75,6 +77,7 @@ https://blazor-university.com/dependency-injection/dependency-lifetimes-and-scop
 https://blazor-university.com/dependency-injection/component-scoped-dependencies/
 https://blazor-university.com/dependency-injection/component-scoped-dependencies/owning-multiple-dependencies-the-right-way/
 https://blazor-university.com/dependency-injection/component-scoped-dependencies/owning-multiple-dependencies-the-wrong-way/
+
 https://blazor-university.com/dependency-injection/component-scoped-dependencies/fine-control-over-dependency-containers/
 https://blazor-university.com/progressive-web-applications/
 https://blazor-university.com/testing/
