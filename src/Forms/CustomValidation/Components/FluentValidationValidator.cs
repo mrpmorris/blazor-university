@@ -109,8 +109,9 @@ namespace CustomValidation.Components
 			// Clear all errors from a previous validation
 			ValidationMessageStore.Clear();
 
+			var validationContext = new ValidationContext<object>(EditContext.Model);
 			// Tell FluentValidation to validate the object
-			ValidationResult result = await Validator.ValidateAsync(EditContext.Model);
+			ValidationResult result = await Validator.ValidateAsync(validationContext);
 
 			// Now add the results to the ValidationMessageStore we created
 			AddValidationResult(EditContext.Model, result);
@@ -133,7 +134,7 @@ namespace CustomValidation.Components
 			// a specific property
 			var propertiesToValidate = new string[] { fieldIdentifier.FieldName };
 			var fluentValidationContext =
-				new ValidationContext(
+				new ValidationContext<object>(
 					instanceToValidate: fieldIdentifier.Model,
 					propertyChain: new FluentValidation.Internal.PropertyChain(),
 					validatorSelector: new FluentValidation.Internal.MemberNameValidatorSelector(propertiesToValidate)
