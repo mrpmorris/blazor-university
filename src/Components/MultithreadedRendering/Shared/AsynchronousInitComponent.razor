@@ -1,19 +1,22 @@
-﻿<p>Async rendered by thread @IdOfRenderingThread</p>
+﻿<p>Async rendered by thread @IdOfRenderingThread, and SynchronizationContext @hashCodeOfSynchronizationContext</p>
 
 @code
 {
 	int IdOfRenderingThread;
+	int? hashCodeOfSynchronizationContext;
 
 	protected override async Task OnInitializedAsync()
 	{
 		// Runs synchronously as there is no code in base.OnInitialized(),
 		// so the same thread is used
-		await base.OnInitializedAsync().ConfigureAwait(false);
+		await base.OnInitializedAsync();
 		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId;
+		hashCodeOfSynchronizationContext = System.Threading.SynchronizationContext.Current?.GetHashCode();
 
 		// Awaiting will schedule a job for later, and we will be assigned
 		// whichever worker thread is next available
-		await Task.Delay(1000).ConfigureAwait(false);
+		await Task.Delay(1000);
 		IdOfRenderingThread = System.Threading.Thread.CurrentThread.ManagedThreadId;
+		hashCodeOfSynchronizationContext = System.Threading.SynchronizationContext.Current?.GetHashCode();
 	}
 }
